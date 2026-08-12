@@ -1,0 +1,2324 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-slate-950 text-slate-100 dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free SEO Tools | Free Webmaster Tools Online | SEOHubKit</title>
+    <link rel="canonical" href="https://seohubkit.com/">
+    
+    <!-- Schema.org WebApplication Markup for Search Engine Indexing & Ranking -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "SEOHubKit",
+      "url": "https://seohubkit.com/",
+      "description": "Free client-side webmaster and SEO tools suite. Generate meta tags, schema markup, XML sitemaps, robots.txt, and analyze keyword density with zero server delays.",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            400: '#34d399',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            900: '#064e3b',
+                        },
+                        accent: {
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        code: ['Fira Code', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+        code, textarea.code-font, input.code-font, pre { font-family: 'Fira Code', monospace; }
+        
+        /* Smooth Rendering & Layout Shift Prevention */
+        .tool-workspace-panel, #auth-view, #hub-view, #workspace-view, #about-view, #contact-view, #privacy-view, #blog-view {
+            will-change: opacity;
+            transition: opacity 0.15s ease-in-out;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #090d16; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #334155; }
+        
+        .glass-card {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.8) 100%);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+        }
+        .glass-card:hover {
+            border-color: rgba(16, 185, 129, 0.35);
+            box-shadow: 0 20px 30px -10px rgba(16, 185, 129, 0.08);
+        }
+
+        .bg-grid-pattern {
+            background-size: 30px 30px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="h-full flex flex-col bg-slate-950 text-slate-100 antialiased selection:bg-brand-500 selection:text-slate-950 bg-grid-pattern">
+
+    <header class="sticky top-0 z-50 bg-slate-950/80 backdrop-blur-2xl border-b border-slate-800/80 shadow-2xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+            <!-- Brand Logo -->
+            <button onclick="showHubView(); closeMobileMenu();" class="flex items-center space-x-3 text-left group">
+                <div class="h-10 w-10 rounded-xl bg-gradient-to-tr from-brand-600 via-emerald-500 to-indigo-500 flex items-center justify-center shadow-lg shadow-brand-500/20 group-hover:scale-105 transition-transform duration-300">
+                    <i class="fa-solid fa-chart-line text-lg text-slate-950 font-bold"></i>
+                </div>
+                <div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-xl font-black tracking-tight bg-gradient-to-r from-white via-slate-100 to-slate-400 bg-clip-text text-transparent">SEOHubKit</span>
+                        <span class="px-2 py-0.5 text-[10px] font-extrabold uppercase tracking-widest bg-brand-500/10 text-brand-400 border border-brand-500/30 rounded-full">Pro Suite</span>
+                    </div>
+                    <p class="text-[11px] text-slate-400 font-medium">Free Client-Side Webmaster Utilities</p>
+                </div>
+            </button>
+
+            <!-- Navigation Actions Desktop -->
+            <div class="hidden md:flex items-center space-x-1 lg:space-x-2 text-xs font-medium">
+                <button onclick="showHubView(); closeMobileMenu();" class="px-2.5 py-1.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900 transition-colors flex items-center gap-1.5 whitespace-nowrap">
+                    <i class="fa-solid fa-house text-slate-400"></i>
+                    <span>Home</span>
+                </button>
+                <button onclick="showHubView(); closeMobileMenu();" id="nav-hub-btn" class="hidden sm:flex items-center space-x-2 px-2.5 py-1.5 rounded-xl text-slate-300 hover:bg-slate-900 transition-all whitespace-nowrap">
+                    <i class="fa-solid fa-border-all text-xs text-slate-400"></i>
+                    <span>All Tools</span>
+                </button>
+                <button onclick="showBlogView(); closeMobileMenu();" class="px-2.5 py-1.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900 transition-colors flex items-center gap-1.5 whitespace-nowrap">
+                    <i class="fa-solid fa-newspaper text-slate-400"></i>
+                    <span>Blog</span>
+                </button>
+                <button onclick="showAboutView(); closeMobileMenu();" class="px-2.5 py-1.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900 transition-colors flex items-center gap-1.5 whitespace-nowrap">
+                    <i class="fa-solid fa-circle-info text-slate-400"></i>
+                    <span>About</span>
+                </button>
+                <button onclick="showContactView(); closeMobileMenu();" class="px-2.5 py-1.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900 transition-colors flex items-center gap-1.5 whitespace-nowrap">
+                    <i class="fa-solid fa-envelope text-slate-400"></i>
+                    <span>Contact</span>
+                </button>
+                <button onclick="showPrivacyView(); closeMobileMenu();" class="px-2.5 py-1.5 rounded-xl text-emerald-400 hover:text-white hover:bg-slate-900 transition-colors flex items-center gap-1.5 whitespace-nowrap border border-emerald-500/30 font-semibold bg-emerald-500/10">
+                    <i class="fa-solid fa-shield-halved text-emerald-400"></i>
+                    <span>Privacy</span>
+                </button>
+
+                <!-- Auth Nav Indicator Status (Desktop) -->
+                <div id="auth-nav-container" class="pl-2 border-l border-slate-800">
+                    <!-- Session Badge dynamically loaded -->
+                </div>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <div class="flex items-center md:hidden gap-2">
+                <div id="auth-nav-container-mobile"></div>
+                <button onclick="toggleMobileMenu()" aria-label="Toggle Navigation Menu" class="p-2.5 rounded-xl text-slate-300 hover:text-white bg-slate-900 border border-slate-800 transition-colors focus:outline-none flex items-center justify-center">
+                    <i id="mobile-menu-icon" class="fa-solid fa-bars text-sm"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-950/95 border-b border-slate-800/90 px-4 pt-2 pb-4 space-y-2 text-xs font-medium shadow-2xl backdrop-blur-2xl">
+            <button onclick="showHubView(); closeMobileMenu();" class="w-full px-3.5 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900 transition-colors flex items-center gap-2.5 text-left">
+                <i class="fa-solid fa-house text-slate-400 w-4"></i>
+                <span>Home</span>
+            </button>
+            <button onclick="showHubView(); closeMobileMenu();" class="w-full px-3.5 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900 transition-colors flex items-center gap-2.5 text-left">
+                <i class="fa-solid fa-border-all text-slate-400 w-4"></i>
+                <span>All Tools</span>
+            </button>
+            <button onclick="showBlogView(); closeMobileMenu();" class="w-full px-3.5 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900 transition-colors flex items-center gap-2.5 text-left">
+                <i class="fa-solid fa-newspaper text-slate-400 w-4"></i>
+                <span>Blog & Guides</span>
+            </button>
+            <button onclick="showAboutView(); closeMobileMenu();" class="w-full px-3.5 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900 transition-colors flex items-center gap-2.5 text-left">
+                <i class="fa-solid fa-circle-info text-slate-400 w-4"></i>
+                <span>About</span>
+            </button>
+            <button onclick="showContactView(); closeMobileMenu();" class="w-full px-3.5 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900 transition-colors flex items-center gap-2.5 text-left">
+                <i class="fa-solid fa-envelope text-slate-400 w-4"></i>
+                <span>Contact</span>
+            </button>
+            <button onclick="showPrivacyView(); closeMobileMenu();" class="w-full px-3.5 py-2.5 rounded-xl text-emerald-400 hover:text-white hover:bg-slate-900 transition-colors flex items-center gap-2.5 text-left border border-emerald-500/30 font-semibold bg-emerald-500/10">
+                <i class="fa-solid fa-shield-halved text-emerald-400 w-4"></i>
+                <span>Privacy Policy</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+        <div id="auth-view" class="space-y-8">
+            <div class="relative overflow-hidden rounded-3xl bg-slate-900/90 border border-slate-800/90 p-8 sm:p-12 shadow-2xl backdrop-blur-xl">
+                <div class="absolute -right-12 -bottom-12 w-80 h-80 bg-brand-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
+                    <!-- Auth Hero Message -->
+                    <div class="lg:col-span-6 space-y-6">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-extrabold bg-brand-500/10 text-brand-400 border border-brand-500/30">
+                            <i class="fa-solid fa-shield-halved text-brand-400"></i> 100% Free Account & Local Storage
+                        </span>
+                        <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
+                            Join <span class="bg-gradient-to-r from-brand-400 via-emerald-300 to-indigo-400 bg-clip-text text-transparent">SEOHubKit</span> & Unlock Full Toolkit
+                        </h1>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Create your free account to access all 8 webmaster utilities, generate meta tags, schema JSON-LD, sitemaps, robots.txt files, and analyze keyword densities with zero server delays.
+                        </p>
+                        
+                        <div class="space-y-3 pt-2 text-xs text-slate-300">
+                            <div class="flex items-center gap-3">
+                                <div class="w-6 h-6 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs font-bold"><i class="fa-solid fa-check"></i></div>
+                                <span>No credit card required. Free forever.</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-6 h-6 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs font-bold"><i class="fa-solid fa-check"></i></div>
+                                <span>Your personal details remain on your local device browser.</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-6 h-6 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs font-bold"><i class="fa-solid fa-check"></i></div>
+                                <span>Instant automatic entry into SEOHubKit workspace upon sign up.</span>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 flex flex-wrap items-center gap-3">
+                            <button onclick="showHubView()" class="px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold border border-slate-700 transition-colors flex items-center gap-2">
+                                <span>Browse Tools As Guest</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </button>
+                            <button onclick="showBlogView()" class="px-5 py-2.5 rounded-xl bg-indigo-600/20 hover:bg-indigo-600/30 text-indigo-300 border border-indigo-500/30 text-xs font-extrabold transition-all flex items-center gap-2">
+                                <i class="fa-solid fa-newspaper text-indigo-400"></i>
+                                <span>SEO Blog & Guides</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Auth Forms Card -->
+                    <div class="lg:col-span-6">
+                        <div class="bg-slate-950/90 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl relative">
+                            <!-- Auth Card Tabs -->
+                            <div class="flex items-center space-x-2 border-b border-slate-800 pb-4 mb-6">
+                                <button id="tab-btn-signup" onclick="switchAuthTab('signup')" class="flex-1 py-2.5 text-center text-xs font-extrabold rounded-xl bg-brand-500/10 text-brand-400 border border-brand-500/30 transition-all">
+                                    <i class="fa-solid fa-user-plus mr-1.5"></i> Sign Up (New User)
+                                </button>
+                                <button id="tab-btn-signin" onclick="switchAuthTab('signin')" class="flex-1 py-2.5 text-center text-xs font-extrabold rounded-xl text-slate-400 hover:text-white hover:bg-slate-900 transition-all">
+                                    <i class="fa-solid fa-right-to-bracket mr-1.5"></i> Sign In
+                                </button>
+                            </div>
+
+                            <!-- Sign Up Form (Default visible) -->
+                            <form id="form-signup" onsubmit="handleSignUp(event)" class="space-y-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 mb-1">Full Name</label>
+                                    <input type="text" id="signup-name" required placeholder="John Doe" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-brand-500">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 mb-1">Email Address</label>
+                                    <input type="email" id="signup-email" required placeholder="user@example.com" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-brand-500">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 mb-1">Password</label>
+                                    <input type="password" id="signup-password" required placeholder="••••••••" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-brand-500">
+                                </div>
+                                <button type="submit" class="w-full py-3.5 bg-brand-500 hover:bg-brand-400 text-slate-950 font-extrabold text-xs sm:text-sm rounded-xl transition-all shadow-lg shadow-brand-500/20 flex items-center justify-center gap-2">
+                                    <i class="fa-solid fa-bolt"></i> Create Free Account & Enter SEOHubKit
+                                </button>
+                            </form>
+
+                            <!-- Sign In Form -->
+                            <form id="form-signin" onsubmit="handleSignIn(event)" class="space-y-4 hidden">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 mb-1">Email Address</label>
+                                    <input type="email" id="signin-email" required placeholder="user@example.com" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-brand-500">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 mb-1">Password</label>
+                                    <input type="password" id="signin-password" required placeholder="••••••••" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-brand-500">
+                                </div>
+                                <button type="submit" class="w-full py-3.5 bg-brand-500 hover:bg-brand-400 text-slate-950 font-extrabold text-xs sm:text-sm rounded-xl transition-all shadow-lg shadow-brand-500/20 flex items-center justify-center gap-2">
+                                    <i class="fa-solid fa-right-to-bracket"></i> Sign In & Enter SEOHubKit
+                                </button>
+                            </form>
+
+                            <!-- Direct Blog Button below forms -->
+                            <div class="mt-6 pt-5 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
+                                <span class="text-slate-400">Want to read guides without logging in?</span>
+                                <button type="button" onclick="showBlogView()" class="w-full sm:w-auto px-4 py-2 rounded-xl bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-400 border border-indigo-500/30 font-extrabold transition-all flex items-center justify-center gap-2 whitespace-nowrap">
+                                    <i class="fa-solid fa-newspaper"></i> SEO Blog & Guides &rarr;
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="hub-view" class="space-y-10 hidden">
+            <!-- Hero Banner -->
+            <div class="relative overflow-hidden rounded-3xl bg-slate-900/90 border border-slate-800/90 p-8 sm:p-12 shadow-2xl backdrop-blur-xl">
+                <div class="absolute -right-12 -bottom-12 w-80 h-80 bg-brand-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute right-1/3 -top-12 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="relative z-10 max-w-3xl space-y-5">
+                    <div class="flex flex-wrap items-center gap-2">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-brand-500/10 text-brand-400 border border-brand-500/30">
+                            <i class="fa-solid fa-bolt text-brand-400"></i> Lightning Fast Browser Processing
+                        </span>
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-slate-800 text-slate-300 border border-slate-700">
+                            <i class="fa-solid fa-shield-halved text-indigo-400"></i> Zero Data Uploads
+                        </span>
+                    </div>
+
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
+                        Professional <span class="bg-gradient-to-r from-brand-400 via-emerald-300 to-indigo-400 bg-clip-text text-transparent">SEO & Webmaster</span> Utility Suite
+                    </h1>
+                    
+                    <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+                        Generate meta tags, build XML sitemaps, configure robots.txt crawlers, generate JSON-LD schema markup, analyze keyword density, generate .htaccess rules, and clean URL slugs instantly in your browser.
+                    </p>
+
+                    <!-- Tool Quick Search Filter -->
+                    <div class="pt-3 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 max-w-xl">
+                        <div class="relative flex-1">
+                            <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 text-sm"></i>
+                            <input type="text" id="tool-search" oninput="filterToolsGrid()" placeholder="Search tools (meta, schema, density, htaccess, slug)..." class="w-full bg-slate-950/90 border border-slate-700/80 rounded-2xl pl-11 pr-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all shadow-inner">
+                        </div>
+                        <button onclick="filterToolsGrid()" class="px-5 py-3 rounded-2xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold border border-slate-700 transition-colors">
+                            Filter Tools
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grid of Tools -->
+            <div>
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6 pb-2 border-b border-slate-800/60">
+                    <div>
+                        <h2 class="text-xl font-extrabold text-white flex items-center gap-2.5">
+                            <i class="fa-solid fa-cubes text-brand-500"></i> Webmaster Utility Directory
+                        </h2>
+                        <p class="text-xs text-slate-400 mt-0.5">Select a micro-tool to launch the interactive workspace</p>
+                    </div>
+                    <span id="tools-count" class="text-xs font-bold text-slate-300 bg-slate-900 px-3 py-1.5 rounded-xl border border-slate-800 self-start sm:self-auto">8 Tools Available</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="tools-grid">
+                    
+                    <!-- Card 1: Meta Tag Generator -->
+                    <div class="tool-card glass-card rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 group" data-keywords="meta tag search title description open graph keywords index follow">
+                        <div>
+                            <div class="flex items-center justify-between mb-5">
+                                <div class="w-12 h-12 rounded-2xl bg-brand-500/10 border border-brand-500/30 text-brand-400 flex items-center justify-center text-xl group-hover:scale-110 transition-transform duration-300 shadow-inner">
+                                    <i class="fa-solid fa-tags"></i>
+                                </div>
+                                <span class="text-[11px] font-extrabold px-2.5 py-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 rounded-lg">High Search Impact</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-brand-400 transition-colors flex items-center gap-2">
+                                Meta Tag Generator
+                            </h3>
+                            <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                                Build complete HTML search engine meta tags, character limit counters, Open Graph social tags, and Twitter Card headers.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+                            <span class="text-[11px] text-slate-500 font-medium flex items-center gap-1.5">
+                                <i class="fa-solid fa-code text-slate-400"></i> HTML Snippets
+                            </span>
+                            <button onclick="openTool('meta-generator')" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-brand-600 hover:text-slate-950 text-white text-xs font-bold transition-all flex items-center gap-2 shadow-lg">
+                                Launch Tool <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Schema Markup Generator -->
+                    <div class="tool-card glass-card rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 group" data-keywords="schema json-ld structured data google rich snippets article faq local business">
+                        <div>
+                            <div class="flex items-center justify-between mb-5">
+                                <div class="w-12 h-12 rounded-2xl bg-rose-500/10 border border-rose-500/30 text-rose-400 flex items-center justify-center text-xl group-hover:scale-110 transition-transform duration-300 shadow-inner">
+                                    <i class="fa-solid fa-diagram-project"></i>
+                                </div>
+                                <span class="text-[11px] font-extrabold px-2.5 py-1 bg-rose-500/10 text-rose-400 border border-rose-500/30 rounded-lg">Rich Snippets</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-rose-400 transition-colors flex items-center gap-2">
+                                Schema Markup Generator
+                            </h3>
+                            <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                                Generate valid JSON-LD structured data for Articles, FAQs, and Local Businesses to win Google rich search results.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+                            <span class="text-[11px] text-slate-500 font-medium flex items-center gap-1.5">
+                                <i class="fa-solid fa-brackets-curly text-slate-400"></i> JSON-LD Format
+                            </span>
+                            <button onclick="openTool('schema-generator')" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-rose-600 hover:text-white text-white text-xs font-bold transition-all flex items-center gap-2 shadow-lg">
+                                Launch Tool <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Keyword Density & Content Analyzer -->
+                    <div class="tool-card glass-card rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 group" data-keywords="keyword density word counter text analyzer article reading time character frequency">
+                        <div>
+                            <div class="flex items-center justify-between mb-5">
+                                <div class="w-12 h-12 rounded-2xl bg-teal-500/10 border border-teal-500/30 text-teal-400 flex items-center justify-center text-xl group-hover:scale-110 transition-transform duration-300 shadow-inner">
+                                    <i class="fa-solid fa-calculator"></i>
+                                </div>
+                                <span class="text-[11px] font-extrabold px-2.5 py-1 bg-teal-500/10 text-teal-400 border border-teal-500/30 rounded-lg">Content Audit</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-teal-400 transition-colors flex items-center gap-2">
+                                Keyword Density Analyzer
+                            </h3>
+                            <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                                Analyze article text to calculate word count, estimated reading time, and top keyword frequency percentages to avoid over-optimization.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+                            <span class="text-[11px] text-slate-500 font-medium flex items-center gap-1.5">
+                                <i class="fa-solid fa-chart-pie text-slate-400"></i> Real-time Analysis
+                            </span>
+                            <button onclick="openTool('keyword-density')" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-teal-600 hover:text-white text-white text-xs font-bold transition-all flex items-center gap-2 shadow-lg">
+                                Launch Tool <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: .htaccess Redirect Generator -->
+                    <div class="tool-card glass-card rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 group" data-keywords="htaccess 301 redirect ssl force https apache server canonical rewrite rule">
+                        <div>
+                            <div class="flex items-center justify-between mb-5">
+                                <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 flex items-center justify-center text-xl group-hover:scale-110 transition-transform duration-300 shadow-inner">
+                                    <i class="fa-solid fa-server"></i>
+                                </div>
+                                <span class="text-[11px] font-extrabold px-2.5 py-1 bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 rounded-lg">Server Rules</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors flex items-center gap-2">
+                                .htaccess Redirect Generator
+                            </h3>
+                            <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                                Build Apache .htaccess rules for 301 permanent redirects, forcing HTTPS/SSL, and non-WWW canonical domain redirects.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+                            <span class="text-[11px] text-slate-500 font-medium flex items-center gap-1.5">
+                                <i class="fa-solid fa-terminal text-slate-400"></i> Apache Rules
+                            </span>
+                            <button onclick="openTool('htaccess-generator')" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-cyan-600 hover:text-white text-white text-xs font-bold transition-all flex items-center gap-2 shadow-lg">
+                                Launch Tool <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: Robots.txt Generator -->
+                    <div class="tool-card glass-card rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 group" data-keywords="robots txt crawler googlebot indexing disallow sitemap crawl delay">
+                        <div>
+                            <div class="flex items-center justify-between mb-5">
+                                <div class="w-12 h-12 rounded-2xl bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 flex items-center justify-center text-xl group-hover:scale-110 transition-transform duration-300 shadow-inner">
+                                    <i class="fa-solid fa-robot"></i>
+                                </div>
+                                <span class="text-[11px] font-extrabold px-2.5 py-1 bg-indigo-500/10 text-indigo-400 border border-indigo-500/30 rounded-lg">Crawl Directives</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-indigo-400 transition-colors flex items-center gap-2">
+                                Robots.txt Generator
+                            </h3>
+                            <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                                Customise Googlebot and Bingbot access rules, block sensitive directories, add crawl delays, and export valid robots.txt files.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+                            <span class="text-[11px] text-slate-500 font-medium flex items-center gap-1.5">
+                                <i class="fa-solid fa-download text-slate-400"></i> File Export
+                            </span>
+                            <button onclick="openTool('robots-generator')" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-indigo-600 hover:text-white text-white text-xs font-bold transition-all flex items-center gap-2 shadow-lg">
+                                Launch Tool <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Card 6: XML Sitemap Generator -->
+                    <div class="tool-card glass-card rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 group" data-keywords="xml sitemap indexing google search console url list priority changefreq">
+                        <div>
+                            <div class="flex items-center justify-between mb-5">
+                                <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-400 flex items-center justify-center text-xl group-hover:scale-110 transition-transform duration-300 shadow-inner">
+                                    <i class="fa-solid fa-sitemap"></i>
+                                </div>
+                                <span class="text-[11px] font-extrabold px-2.5 py-1 bg-amber-500/10 text-amber-400 border border-amber-500/30 rounded-lg">Indexing Tool</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-amber-400 transition-colors flex items-center gap-2">
+                                XML Sitemap Builder
+                            </h3>
+                            <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                                Transform batch URL lists into Google Search Console compliant XML sitemaps with priority weighting and change frequencies.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+                            <span class="text-[11px] text-slate-500 font-medium flex items-center gap-1.5">
+                                <i class="fa-solid fa-file-code text-slate-400"></i> XML Standard
+                            </span>
+                            <button onclick="openTool('sitemap-generator')" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-amber-600 hover:text-slate-950 text-white text-xs font-bold transition-all flex items-center gap-2 shadow-lg">
+                                Launch Tool <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Card 7: Social Media Card Previewer -->
+                    <div class="tool-card glass-card rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 group" data-keywords="social card open graph twitter card facebook preview link image og banner">
+                        <div>
+                            <div class="flex items-center justify-between mb-5">
+                                <div class="w-12 h-12 rounded-2xl bg-blue-500/10 border border-blue-500/30 text-blue-400 flex items-center justify-center text-xl group-hover:scale-110 transition-transform duration-300 shadow-inner">
+                                    <i class="fa-solid fa-share-nodes"></i>
+                                </div>
+                                <span class="text-[11px] font-extrabold px-2.5 py-1 bg-blue-500/10 text-blue-400 border border-blue-500/30 rounded-lg">Visual Audit</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-blue-400 transition-colors flex items-center gap-2">
+                                Social Card Previewer
+                            </h3>
+                            <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                                Test and inspect live visual link previews for Facebook, Twitter/X cards, and WhatsApp shares before publishing.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+                            <span class="text-[11px] text-slate-500 font-medium flex items-center gap-1.5">
+                                <i class="fa-solid fa-eye text-slate-400"></i> Live UI Preview
+                            </span>
+                            <button onclick="openTool('og-previewer')" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-blue-600 hover:text-white text-white text-xs font-bold transition-all flex items-center gap-2 shadow-lg">
+                                Launch Tool <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Card 8: URL / Slug Cleaner -->
+                    <div class="tool-card glass-card rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 group" data-keywords="slug cleaner url generator title to url link clean permalink lowercase hyphen">
+                        <div>
+                            <div class="flex items-center justify-between mb-5">
+                                <div class="w-12 h-12 rounded-2xl bg-purple-500/10 border border-purple-500/30 text-purple-400 flex items-center justify-center text-xl group-hover:scale-110 transition-transform duration-300 shadow-inner">
+                                    <i class="fa-solid fa-link"></i>
+                                </div>
+                                <span class="text-[11px] font-extrabold px-2.5 py-1 bg-purple-500/10 text-purple-400 border border-purple-500/30 rounded-lg">URL Formatter</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-purple-400 transition-colors flex items-center gap-2">
+                                URL / Slug Cleaner
+                            </h3>
+                            <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                                Instantly convert article headlines into clean, lowercase, hyphenated URL slugs for WordPress and custom CMSs.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+                            <span class="text-[11px] text-slate-500 font-medium flex items-center gap-1.5">
+                                <i class="fa-solid fa-wand-magic-sparkles text-slate-400"></i> 1-Click Clean
+                            </span>
+                            <button onclick="openTool('slug-cleaner')" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-purple-600 hover:text-white text-white text-xs font-bold transition-all flex items-center gap-2 shadow-lg">
+                                Launch Tool <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="workspace-view" class="hidden space-y-6">
+            
+            <!-- Breadcrumb Header & Quick Switcher -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-slate-900/90 border border-slate-800 rounded-2xl p-4 shadow-xl backdrop-blur-xl">
+                <button onclick="showHubView()" class="inline-flex items-center space-x-2 text-xs font-bold text-slate-300 hover:text-brand-400 transition-colors">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span>Back to Tools Directory</span>
+                </button>
+
+                <!-- Tool Tabs Switcher Pill Bar -->
+                <div class="flex items-center space-x-1.5 overflow-x-auto custom-scrollbar pb-1 sm:pb-0">
+                    <button data-tool-tab="meta-generator" onclick="switchToolWorkspace('meta-generator')" class="tool-workspace-btn px-3 py-1.5 rounded-xl text-xs font-semibold transition-all text-slate-400 hover:text-white hover:bg-slate-800 whitespace-nowrap">
+                        <i class="fa-solid fa-tags mr-1"></i> Meta Tags
+                    </button>
+                    <button data-tool-tab="schema-generator" onclick="switchToolWorkspace('schema-generator')" class="tool-workspace-btn px-3 py-1.5 rounded-xl text-xs font-semibold transition-all text-slate-400 hover:text-white hover:bg-slate-800 whitespace-nowrap">
+                        <i class="fa-solid fa-diagram-project mr-1"></i> Schema Markup
+                    </button>
+                    <button data-tool-tab="keyword-density" onclick="switchToolWorkspace('keyword-density')" class="tool-workspace-btn px-3 py-1.5 rounded-xl text-xs font-semibold transition-all text-slate-400 hover:text-white hover:bg-slate-800 whitespace-nowrap">
+                        <i class="fa-solid fa-calculator mr-1"></i> Keyword Density
+                    </button>
+                    <button data-tool-tab="htaccess-generator" onclick="switchToolWorkspace('htaccess-generator')" class="tool-workspace-btn px-3 py-1.5 rounded-xl text-xs font-semibold transition-all text-slate-400 hover:text-white hover:bg-slate-800 whitespace-nowrap">
+                        <i class="fa-solid fa-server mr-1"></i> .htaccess
+                    </button>
+                    <button data-tool-tab="robots-generator" onclick="switchToolWorkspace('robots-generator')" class="tool-workspace-btn px-3 py-1.5 rounded-xl text-xs font-semibold transition-all text-slate-400 hover:text-white hover:bg-slate-800 whitespace-nowrap">
+                        <i class="fa-solid fa-robot mr-1"></i> Robots.txt
+                    </button>
+                    <button data-tool-tab="sitemap-generator" onclick="switchToolWorkspace('sitemap-generator')" class="tool-workspace-btn px-3 py-1.5 rounded-xl text-xs font-semibold transition-all text-slate-400 hover:text-white hover:bg-slate-800 whitespace-nowrap">
+                        <i class="fa-solid fa-sitemap mr-1"></i> Sitemap XML
+                    </button>
+                    <button data-tool-tab="og-previewer" onclick="switchToolWorkspace('og-previewer')" class="tool-workspace-btn px-3 py-1.5 rounded-xl text-xs font-semibold transition-all text-slate-400 hover:text-white hover:bg-slate-800 whitespace-nowrap">
+                        <i class="fa-solid fa-share-nodes mr-1"></i> Social Preview
+                    </button>
+                    <button data-tool-tab="slug-cleaner" onclick="switchToolWorkspace('slug-cleaner')" class="tool-workspace-btn px-3 py-1.5 rounded-xl text-xs font-semibold transition-all text-slate-400 hover:text-white hover:bg-slate-800 whitespace-nowrap">
+                        <i class="fa-solid fa-link mr-1"></i> Slug Cleaner
+                    </button>
+                </div>
+            </div>
+
+            <!-- WORKSPACE PANELS -->
+
+            <!-- TOOL PANEL 1: Meta Tag Generator -->
+            <section id="meta-generator" class="tool-workspace-panel space-y-6">
+                <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl backdrop-blur-xl">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-4 border-b border-slate-800">
+                        <div>
+                            <h1 class="text-2xl font-black text-white flex items-center gap-2.5">
+                                <i class="fa-solid fa-tags text-brand-400"></i> Meta Tag Generator
+                            </h1>
+                            <p class="text-xs sm:text-sm text-slate-400 mt-1">Fill in your website information and click "Generate Meta Tags" to build your production HTML snippet.</p>
+                        </div>
+                        <button onclick="fillSampleMeta()" class="self-start sm:self-auto px-4 py-2 text-xs font-bold bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-xl transition-all border border-slate-700 flex items-center gap-2 shadow-inner">
+                            <i class="fa-solid fa-wand-magic-sparkles text-brand-400"></i> Fill Sample Data
+                        </button>
+                    </div>
+
+                    <form id="meta-form" class="space-y-6" onsubmit="event.preventDefault(); generateMetaTags();">
+                        <div class="bg-slate-950/70 p-5 rounded-2xl border border-slate-800/80 space-y-4">
+                            <h2 class="text-xs font-extrabold text-brand-400 uppercase tracking-widest flex items-center gap-2">
+                                <i class="fa-solid fa-magnifying-glass"></i> Search Engine Basics
+                            </h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="md:col-span-2">
+                                    <div class="flex justify-between items-center mb-1">
+                                        <label class="block text-xs font-semibold text-slate-300">Page Title</label>
+                                        <span id="title-char-count" class="text-[11px] font-mono text-slate-500">0 / 60 chars</span>
+                                    </div>
+                                    <input type="text" id="meta-title" oninput="updateCharCounts()" placeholder="e.g., SEOHubKit - Free Webmaster & SEO Tools" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-brand-500 transition-colors">
+                                </div>
+                                <div class="md:col-span-2">
+                                    <div class="flex justify-between items-center mb-1">
+                                        <label class="block text-xs font-semibold text-slate-300">Page Meta Description</label>
+                                        <span id="desc-char-count" class="text-[11px] font-mono text-slate-500">0 / 160 chars</span>
+                                    </div>
+                                    <textarea id="meta-desc" rows="2" oninput="updateCharCounts()" placeholder="e.g., Free client-side webmaster utilities. Generate meta tags, sitemaps, robots.txt and social previews instantly in browser." class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-brand-500 transition-colors custom-scrollbar"></textarea>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 mb-1">Keywords</label>
+                                    <input type="text" id="meta-keywords" placeholder="seo, meta generator, webmaster tools" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-brand-500">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 mb-1">Author Name</label>
+                                    <input type="text" id="meta-author" placeholder="SEOHubKit Team" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-brand-500">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 mb-1">Robots Index Directive</label>
+                                    <select id="meta-robots-index" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3 py-2.5 text-sm text-white focus:outline-none focus:border-brand-500">
+                                        <option value="index">Index (Show page in search results)</option>
+                                        <option value="noindex">Noindex (Hide page from search results)</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 mb-1">Robots Follow Directive</label>
+                                    <select id="meta-robots-follow" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3 py-2.5 text-sm text-white focus:outline-none focus:border-brand-500">
+                                        <option value="follow">Follow (Allow crawlers to follow links)</option>
+                                        <option value="nofollow">Nofollow (Prevent crawlers from following links)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Open Graph Info -->
+                        <div class="bg-slate-950/70 p-5 rounded-2xl border border-slate-800/80 space-y-4">
+                            <h2 class="text-xs font-extrabold text-blue-400 uppercase tracking-widest flex items-center gap-2">
+                                <i class="fa-solid fa-share-nodes"></i> Open Graph (Facebook / WhatsApp / LinkedIn)
+                            </h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 mb-1">OG Site Name</label>
+                                    <input type="text" id="meta-og-sitename" placeholder="SEOHubKit" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-brand-500">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 mb-1">OG Featured Image URL</label>
+                                    <input type="url" id="meta-og-image" placeholder="https://example.com/banner.jpg" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-brand-500">
+                                    <p class="text-[11px] text-slate-500 mt-1">Direct link to your logo/banner image that shows up when sharing on WhatsApp or Facebook.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-2">
+                            <button type="button" onclick="generateMetaTags()" class="w-full sm:w-auto px-8 py-3.5 bg-brand-500 hover:bg-brand-400 text-slate-950 font-extrabold text-xs sm:text-sm rounded-xl transition-all shadow-lg shadow-brand-500/20 flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-bolt"></i> Generate Meta Tags Code
+                            </button>
+                        </div>
+                    </form>
+
+                    <div class="mt-8 pt-6 border-t border-slate-800">
+                        <div class="flex items-center justify-between mb-3">
+                            <label class="text-xs font-bold uppercase tracking-wider text-slate-300 flex items-center gap-1.5">
+                                <i class="fa-solid fa-code text-brand-400"></i> Generated HTML Meta Code
+                            </label>
+                            <button onclick="copyToClipboard('meta-output')" class="px-4 py-2 text-xs font-bold bg-brand-500 hover:bg-brand-400 text-slate-950 rounded-xl transition-all shadow-lg shadow-brand-500/20 flex items-center gap-1.5">
+                                <i class="fa-solid fa-copy"></i> Copy Code
+                            </button>
+                        </div>
+                        <pre class="bg-slate-950 p-4 rounded-2xl border border-slate-800 overflow-x-auto text-xs text-brand-400 code-font custom-scrollbar" id="meta-output">&lt;!-- Click 'Generate Meta Tags Code' button above --&gt;</pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TOOL PANEL 2: Schema Markup Generator -->
+            <section id="schema-generator" class="tool-workspace-panel space-y-6 hidden">
+                <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl backdrop-blur-xl">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-4 border-b border-slate-800">
+                        <div>
+                            <h1 class="text-2xl font-black text-white flex items-center gap-2.5">
+                                <i class="fa-solid fa-diagram-project text-rose-400"></i> Schema Markup Generator (JSON-LD)
+                            </h1>
+                            <p class="text-xs sm:text-sm text-slate-400 mt-1">Generate structured JSON-LD code for Google Rich Results.</p>
+                        </div>
+                        <button onclick="fillSampleSchema()" class="self-start sm:self-auto px-4 py-2 text-xs font-bold bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-xl transition-all border border-slate-700 flex items-center gap-2 shadow-inner">
+                            <i class="fa-solid fa-wand-magic-sparkles text-rose-400"></i> Load Sample Article
+                        </button>
+                    </div>
+
+                    <form class="space-y-4" onsubmit="event.preventDefault(); generateSchemaMarkup();">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Schema Type</label>
+                            <select id="schema-type" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-rose-500">
+                                <option value="Article">Article / Blog Post</option>
+                                <option value="FAQPage">FAQ Page</option>
+                                <option value="LocalBusiness">Local Business</option>
+                            </select>
+                        </div>
+
+                        <!-- Article Fields -->
+                        <div id="schema-fields-article" class="space-y-3 bg-slate-950/70 p-4 rounded-2xl border border-slate-800">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1">Article Headline</label>
+                                <input type="text" id="schema-art-headline" placeholder="Complete Guide to Technical SEO in 2026" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3.5 py-2 text-sm text-white focus:outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1">Article Featured Image URL</label>
+                                <input type="url" id="schema-art-image" placeholder="https://example.com/cover.jpg" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3.5 py-2 text-sm text-white focus:outline-none">
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 mb-1">Author Name</label>
+                                    <input type="text" id="schema-art-author" placeholder="John Doe" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3.5 py-2 text-sm text-white focus:outline-none">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 mb-1">Publisher Brand Name</label>
+                                    <input type="text" id="schema-art-publisher" placeholder="SEOHubKit" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3.5 py-2 text-sm text-white focus:outline-none">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-2">
+                            <button type="button" onclick="generateSchemaMarkup()" class="w-full sm:w-auto px-8 py-3.5 bg-rose-600 hover:bg-rose-500 text-white font-extrabold text-xs sm:text-sm rounded-xl transition-all shadow-lg shadow-rose-600/20 flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-bolt"></i> Generate JSON-LD Schema
+                            </button>
+                        </div>
+                    </form>
+
+                    <div class="mt-8 pt-6 border-t border-slate-800">
+                        <div class="flex items-center justify-between mb-3">
+                            <label class="text-xs font-bold uppercase tracking-wider text-slate-300">Generated JSON-LD Code</label>
+                            <button onclick="copyToClipboard('schema-output')" class="px-4 py-2 text-xs font-bold bg-rose-600 hover:bg-rose-500 text-white rounded-xl transition-all flex items-center gap-1.5">
+                                <i class="fa-solid fa-copy"></i> Copy Schema Code
+                            </button>
+                        </div>
+                        <pre class="bg-slate-950 p-4 rounded-2xl border border-slate-800 overflow-x-auto text-xs text-rose-400 code-font custom-scrollbar" id="schema-output">&lt;!-- Click 'Generate JSON-LD Schema' button above --&gt;</pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TOOL PANEL 3: Keyword Density & Content Analyzer -->
+            <section id="keyword-density" class="tool-workspace-panel space-y-6 hidden">
+                <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl backdrop-blur-xl">
+                    <div class="mb-6 pb-4 border-b border-slate-800">
+                        <h1 class="text-2xl font-black text-white flex items-center gap-2.5">
+                            <i class="fa-solid fa-calculator text-teal-400"></i> Keyword Density Analyzer
+                        </h1>
+                        <p class="text-xs sm:text-sm text-slate-400 mt-1">Paste your article text to analyze word count, reading time, and keyword density percentages.</p>
+                    </div>
+
+                    <form class="space-y-4" onsubmit="event.preventDefault(); analyzeKeywordDensity();">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Paste Article / Blog Post Text</label>
+                            <textarea id="density-text-input" rows="6" placeholder="Paste your article paragraph or draft here to analyze keyword usage..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-teal-500 custom-scrollbar"></textarea>
+                        </div>
+
+                        <div>
+                            <button type="button" onclick="analyzeKeywordDensity()" class="w-full sm:w-auto px-8 py-3.5 bg-teal-600 hover:bg-teal-500 text-white font-extrabold text-xs sm:text-sm rounded-xl transition-all shadow-lg shadow-teal-600/20 flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-chart-pie"></i> Analyze Text
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- Analysis Output Dashboard -->
+                    <div id="density-results" class="mt-8 pt-6 border-t border-slate-800 space-y-6 hidden">
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                            <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 text-center">
+                                <p class="text-xs text-slate-400 font-medium">Total Words</p>
+                                <p id="stat-words" class="text-2xl font-black text-teal-400 mt-1">0</p>
+                            </div>
+                            <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 text-center">
+                                <p class="text-xs text-slate-400 font-medium">Characters</p>
+                                <p id="stat-chars" class="text-2xl font-black text-teal-400 mt-1">0</p>
+                            </div>
+                            <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 text-center">
+                                <p class="text-xs text-slate-400 font-medium">Unique Words</p>
+                                <p id="stat-unique" class="text-2xl font-black text-teal-400 mt-1">0</p>
+                            </div>
+                            <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 text-center">
+                                <p class="text-xs text-slate-400 font-medium">Est. Reading Time</p>
+                                <p id="stat-reading" class="text-2xl font-black text-teal-400 mt-1">0 min</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-300 mb-3">Top Repeated Keywords (Density)</h3>
+                            <div class="overflow-x-auto custom-scrollbar">
+                                <table class="w-full text-left text-xs text-slate-300">
+                                    <thead class="bg-slate-950 text-slate-400 uppercase font-bold border-b border-slate-800">
+                                        <tr>
+                                            <th class="p-3">Keyword</th>
+                                            <th class="p-3">Count</th>
+                                            <th class="p-3">Density Percentage</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="density-table-body" class="divide-y divide-slate-800/60 bg-slate-900/50">
+                                        <!-- Dynamic keyword rows -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TOOL PANEL 4: .htaccess Redirect Generator -->
+            <section id="htaccess-generator" class="tool-workspace-panel space-y-6 hidden">
+                <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl backdrop-blur-xl">
+                    <div class="mb-6 pb-4 border-b border-slate-800">
+                        <h1 class="text-2xl font-black text-white flex items-center gap-2.5">
+                            <i class="fa-solid fa-server text-cyan-400"></i> .htaccess Redirect Generator
+                        </h1>
+                        <p class="text-xs sm:text-sm text-slate-400 mt-1">Generate Apache web server rules for redirects, forcing SSL/HTTPS, and WWW canonicalizing.</p>
+                    </div>
+
+                    <form class="space-y-5" onsubmit="event.preventDefault(); generateHtaccess();">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-slate-950/70 p-4 rounded-2xl border border-slate-800">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1">Old Path / Page</label>
+                                <input type="text" id="ht-old-path" placeholder="/old-page" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1">New Destination Path / URL</label>
+                                <input type="text" id="ht-new-path" placeholder="https://example.com/new-page" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none">
+                            </div>
+                        </div>
+
+                        <div class="space-y-2 bg-slate-950/70 p-4 rounded-2xl border border-slate-800 text-xs text-slate-300">
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <input type="checkbox" id="ht-force-https" checked class="rounded bg-slate-900 border-slate-700 text-cyan-500">
+                                <span>Include Rule: Force HTTPS / SSL Redirect</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <input type="checkbox" id="ht-force-www" class="rounded bg-slate-900 border-slate-700 text-cyan-500">
+                                <span>Include Rule: Force WWW Prefix (https://www.domain.com)</span>
+                            </label>
+                        </div>
+
+                        <div>
+                            <button type="button" onclick="generateHtaccess()" class="w-full sm:w-auto px-8 py-3.5 bg-cyan-600 hover:bg-cyan-500 text-white font-extrabold text-xs sm:text-sm rounded-xl transition-all shadow-lg shadow-cyan-600/20 flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-terminal"></i> Generate .htaccess Rules
+                            </button>
+                        </div>
+                    </form>
+
+                    <div class="mt-8 pt-6 border-t border-slate-800">
+                        <div class="flex items-center justify-between mb-3">
+                            <label class="text-xs font-bold uppercase tracking-wider text-slate-300">Generated .htaccess Rules</label>
+                            <button onclick="copyToClipboard('htaccess-output')" class="px-4 py-2 text-xs font-bold bg-cyan-600 hover:bg-cyan-500 text-white rounded-xl transition-all flex items-center gap-1.5">
+                                <i class="fa-solid fa-copy"></i> Copy Rules
+                            </button>
+                        </div>
+                        <pre class="bg-slate-950 p-4 rounded-2xl border border-slate-800 overflow-x-auto text-xs text-cyan-400 code-font custom-scrollbar" id="htaccess-output"># Click 'Generate .htaccess Rules' button above</pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TOOL PANEL 5: Robots.txt Generator -->
+            <section id="robots-generator" class="tool-workspace-panel space-y-6 hidden">
+                <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl backdrop-blur-xl">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-4 border-b border-slate-800">
+                        <div>
+                            <h1 class="text-2xl font-black text-white flex items-center gap-2.5">
+                                <i class="fa-solid fa-robot text-indigo-400"></i> Robots.txt Generator
+                            </h1>
+                            <p class="text-xs sm:text-sm text-slate-400 mt-1">Configure web crawler directives and click "Generate Robots.txt" to build your file.</p>
+                        </div>
+                        <button onclick="fillSampleRobots()" class="self-start sm:self-auto px-4 py-2 text-xs font-bold bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-xl transition-all border border-slate-700 flex items-center gap-2 shadow-inner">
+                            <i class="fa-solid fa-wand-magic-sparkles text-indigo-400"></i> Load Default Rules
+                        </button>
+                    </div>
+
+                    <form id="robots-form" class="space-y-6" onsubmit="event.preventDefault(); generateRobotsTxt();">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1">Global Default Crawler Access (*)</label>
+                                <select id="robots-default-access" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-indigo-500">
+                                    <option value="allow">Allow All Crawlers (Recommended)</option>
+                                    <option value="disallow">Disallow All Crawlers (Block Entire Website)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1">Crawl Delay (Seconds)</label>
+                                <select id="robots-crawl-delay" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-indigo-500">
+                                    <option value="">No Crawl Delay (Default)</option>
+                                    <option value="5">5 Seconds Delay</option>
+                                    <option value="10">10 Seconds Delay</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Quick Select Common Restricted Directories</label>
+                            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 bg-slate-950/70 p-4 rounded-2xl border border-slate-800 text-xs">
+                                <label class="flex items-center space-x-2 cursor-pointer text-slate-300">
+                                    <input type="checkbox" id="dis-admin" value="/admin/" class="rounded bg-slate-900 border-slate-700 text-indigo-500">
+                                    <span>/admin/</span>
+                                </label>
+                                <label class="flex items-center space-x-2 cursor-pointer text-slate-300">
+                                    <input type="checkbox" id="dis-cgi" value="/cgi-bin/" class="rounded bg-slate-900 border-slate-700 text-indigo-500" checked>
+                                    <span>/cgi-bin/</span>
+                                </label>
+                                <label class="flex items-center space-x-2 cursor-pointer text-slate-300">
+                                    <input type="checkbox" id="dis-tmp" value="/tmp/" class="rounded bg-slate-900 border-slate-700 text-indigo-500" checked>
+                                    <span>/tmp/</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Sitemap XML URL Link</label>
+                            <input type="url" id="robots-sitemap-url" placeholder="https://example.com/sitemap.xml" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-indigo-500">
+                        </div>
+
+                        <div class="pt-2">
+                            <button type="button" onclick="generateRobotsTxt()" class="w-full sm:w-auto px-8 py-3.5 bg-indigo-600 hover:bg-indigo-500 text-white font-extrabold text-xs sm:text-sm rounded-xl transition-all shadow-lg shadow-indigo-600/20 flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-bolt"></i> Generate Robots.txt File
+                            </button>
+                        </div>
+                    </form>
+
+                    <div class="mt-8 pt-6 border-t border-slate-800">
+                        <div class="flex items-center justify-between mb-3">
+                            <label class="text-xs font-bold uppercase tracking-wider text-slate-300">Generated Robots.txt File Content</label>
+                            <div class="flex items-center gap-2">
+                                <button onclick="copyToClipboard('robots-output')" class="px-3.5 py-2 text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-white rounded-xl transition-all border border-slate-700">
+                                    <i class="fa-solid fa-copy mr-1"></i> Copy Code
+                                </button>
+                                <button onclick="downloadFile('robots-output', 'robots.txt', 'text/plain')" class="px-4 py-2 text-xs font-bold bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl transition-all shadow-lg shadow-indigo-600/20 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-download"></i> Download
+                                </button>
+                            </div>
+                        </div>
+                        <pre class="bg-slate-950 p-4 rounded-2xl border border-slate-800 overflow-x-auto text-xs text-indigo-400 code-font custom-scrollbar" id="robots-output"># Click 'Generate Robots.txt File' button above</pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TOOL PANEL 6: XML Sitemap Generator -->
+            <section id="sitemap-generator" class="tool-workspace-panel space-y-6 hidden">
+                <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl backdrop-blur-xl">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-4 border-b border-slate-800">
+                        <div>
+                            <h1 class="text-2xl font-black text-white flex items-center gap-2.5">
+                                <i class="fa-solid fa-sitemap text-amber-400"></i> XML Sitemap Generator
+                            </h1>
+                            <p class="text-xs sm:text-sm text-slate-400 mt-1">Enter your page URLs and click "Generate XML Sitemap" to output standard XML markup.</p>
+                        </div>
+                        <button onclick="fillSampleSitemap()" class="self-start sm:self-auto px-4 py-2 text-xs font-bold bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-xl transition-all border border-slate-700 flex items-center gap-2 shadow-inner">
+                            <i class="fa-solid fa-wand-magic-sparkles text-amber-400"></i> Insert Sample URLs
+                        </button>
+                    </div>
+
+                    <form class="space-y-4" onsubmit="event.preventDefault(); generateSitemap();">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Enter Website URLs <span class="text-slate-500 font-normal">(One URL per line)</span></label>
+                            <textarea id="sitemap-urls" rows="5" placeholder="https://example.com/&#10;https://example.com/about" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500 custom-scrollbar"></textarea>
+                        </div>
+
+                        <div class="pt-2">
+                            <button type="button" onclick="generateSitemap()" class="w-full sm:w-auto px-8 py-3.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-xs sm:text-sm rounded-xl transition-all shadow-lg shadow-amber-500/20 flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-bolt"></i> Generate XML Sitemap
+                            </button>
+                        </div>
+                    </form>
+
+                    <div class="mt-8 pt-6 border-t border-slate-800">
+                        <div class="flex items-center justify-between mb-3">
+                            <label class="text-xs font-bold uppercase tracking-wider text-slate-300">Generated XML Sitemap Output</label>
+                            <div class="flex items-center gap-2">
+                                <button onclick="copyToClipboard('sitemap-output')" class="px-3.5 py-2 text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-white rounded-xl transition-all border border-slate-700">
+                                    <i class="fa-solid fa-copy mr-1"></i> Copy
+                                </button>
+                                <button onclick="downloadFile('sitemap-output', 'sitemap.xml', 'application/xml')" class="px-4 py-2 text-xs font-bold bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-xl transition-all shadow-lg shadow-amber-500/20 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-download"></i> Download sitemap.xml
+                                </button>
+                            </div>
+                        </div>
+                        <pre class="bg-slate-950 p-4 rounded-2xl border border-slate-800 overflow-x-auto text-xs text-amber-400 code-font custom-scrollbar max-h-80" id="sitemap-output">&lt;!-- Click 'Generate XML Sitemap' button above --&gt;</pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TOOL PANEL 7: Social Card Previewer -->
+            <section id="og-previewer" class="tool-workspace-panel space-y-6 hidden">
+                <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl backdrop-blur-xl">
+                    <div class="mb-6 pb-4 border-b border-slate-800">
+                        <h1 class="text-2xl font-black text-white flex items-center gap-2.5">
+                            <i class="fa-solid fa-share-nodes text-blue-400"></i> Social Media Card Previewer
+                        </h1>
+                        <p class="text-xs sm:text-sm text-slate-400 mt-1">Fill in parameters and click "Update Card Preview" to visually test Facebook & Twitter links.</p>
+                    </div>
+
+                    <form class="space-y-4" onsubmit="event.preventDefault(); updateSocialPreviews();">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-slate-950/70 p-5 rounded-2xl border border-slate-800">
+                            <div class="md:col-span-2">
+                                <label class="block text-xs font-semibold text-slate-300 mb-1">Preview Page Title</label>
+                                <input type="text" id="prev-title" value="SEOHubKit - Free Webmaster & SEO Tools Hub" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none">
+                            </div>
+                            <div class="md:col-span-2">
+                                <label class="block text-xs font-semibold text-slate-300 mb-1">Preview Description</label>
+                                <textarea id="prev-desc" rows="2" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none custom-scrollbar">Boost site visibility with free client-side meta generators, XML sitemaps, and robots.txt builders.</textarea>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1">Domain Name</label>
+                                <input type="text" id="prev-domain" value="seohubkit.com" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1">OG Banner Image URL</label>
+                                <input type="url" id="prev-image" value="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none">
+                            </div>
+                        </div>
+
+                        <div class="pt-2">
+                            <button type="button" onclick="updateSocialPreviews()" class="w-full sm:w-auto px-8 py-3.5 bg-blue-600 hover:bg-blue-500 text-white font-extrabold text-xs sm:text-sm rounded-xl transition-all shadow-lg shadow-blue-600/20 flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-eye"></i> Update Card Preview
+                            </button>
+                        </div>
+                    </form>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
+                        <div class="space-y-2">
+                            <span class="text-xs font-bold uppercase tracking-wider text-blue-400 flex items-center gap-1.5">
+                                <i class="fa-brands fa-facebook"></i> Facebook / LinkedIn Card
+                            </span>
+                            <div class="bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden shadow-lg">
+                                <div class="h-44 w-full bg-slate-800 overflow-hidden relative">
+                                    <img id="card-fb-img" src="" alt="Preview" decoding="async" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/800x400/1e293b/94a3b8?text=Image+Not+Found'">
+                                </div>
+                                <div class="p-4 bg-slate-900 border-t border-slate-800">
+                                    <p id="card-fb-domain" class="text-[11px] uppercase text-slate-400 font-bold tracking-wider">SEOHUBKIT.COM</p>
+                                    <p id="card-fb-title" class="text-sm font-bold text-white mt-1 line-clamp-1">Title</p>
+                                    <p id="card-fb-desc" class="text-xs text-slate-400 mt-1 line-clamp-2">Description</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <span class="text-xs font-bold uppercase tracking-wider text-sky-400 flex items-center gap-1.5">
+                                <i class="fa-brands fa-x-twitter"></i> Twitter / X Large Card
+                            </span>
+                            <div class="bg-black border border-slate-800 rounded-2xl overflow-hidden shadow-lg">
+                                <div class="h-44 w-full bg-slate-800 overflow-hidden relative">
+                                    <img id="card-tw-img" src="" alt="Preview" decoding="async" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/800x400/1e293b/94a3b8?text=Image+Not+Found'">
+                                </div>
+                                <div class="p-4 bg-slate-950">
+                                    <p id="card-tw-domain" class="text-xs text-slate-500">seohubkit.com</p>
+                                    <p id="card-tw-title" class="text-sm font-semibold text-slate-200 mt-0.5 line-clamp-1">Title</p>
+                                    <p id="card-tw-desc" class="text-xs text-slate-400 mt-1 line-clamp-2">Description</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TOOL PANEL 8: URL / Slug Cleaner -->
+            <section id="slug-cleaner" class="tool-workspace-panel space-y-6 hidden">
+                <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl backdrop-blur-xl">
+                    <div class="mb-6 pb-4 border-b border-slate-800">
+                        <h1 class="text-2xl font-black text-white flex items-center gap-2.5">
+                            <i class="fa-solid fa-link text-purple-400"></i> URL / Slug Cleaner
+                        </h1>
+                        <p class="text-xs sm:text-sm text-slate-400 mt-1">Convert raw post headlines into clean, search-optimized permalink slugs.</p>
+                    </div>
+
+                    <form class="space-y-5" onsubmit="event.preventDefault(); cleanSlug();">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Input Headline / Article Title</label>
+                            <input type="text" id="slug-input" placeholder="e.g., Top 10 Best SEO Tools for 2026!" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-base text-white focus:outline-none focus:border-purple-500">
+                        </div>
+
+                        <div>
+                            <button type="button" onclick="cleanSlug()" class="w-full sm:w-auto px-8 py-3.5 bg-purple-600 hover:bg-purple-500 text-white font-extrabold text-xs sm:text-sm rounded-xl transition-all shadow-lg shadow-purple-600/20 flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-wand-magic-sparkles"></i> Clean & Generate Slug
+                            </button>
+                        </div>
+
+                        <div class="pt-2">
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Cleaned Permalink Slug</label>
+                            <div class="flex items-center gap-2">
+                                <input type="text" id="slug-output" readonly placeholder="your-cleaned-slug" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-purple-400 code-font font-semibold focus:outline-none">
+                                <button type="button" onclick="copyToClipboard('slug-output')" class="px-5 py-3 bg-purple-600 hover:bg-purple-500 text-white rounded-xl text-xs font-bold transition-all shadow-lg shadow-purple-600/20 flex items-center gap-2 whitespace-nowrap">
+                                    <i class="fa-solid fa-copy"></i> Copy Slug
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+        </div>
+
+        <div id="about-view" class="hidden space-y-8">
+            <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-8 sm:p-12 shadow-2xl backdrop-blur-xl space-y-8">
+                <div class="border-b border-slate-800 pb-6">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-brand-400 px-3 py-1 bg-brand-500/10 border border-brand-500/20 rounded-full">About The Platform</span>
+                    <h1 class="text-3xl sm:text-4xl font-black text-white mt-3">Empowering Webmasters with Zero-Server Client Utilities</h1>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-slate-950/70 p-6 rounded-2xl border border-slate-800/80 space-y-3">
+                        <div class="w-10 h-10 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-white">Instant Browser Processing</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">All regex cleanings, XML tree formatting, and meta string building execute right inside your browser JavaScript V8 engine.</p>
+                    </div>
+
+                    <div class="bg-slate-950/70 p-6 rounded-2xl border border-slate-800/80 space-y-3">
+                        <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-white">100% Data Privacy</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">Your page titles, sitemap URLs, and robots configurations never touch external database servers.</p>
+                    </div>
+
+                    <div class="bg-slate-950/70 p-6 rounded-2xl border border-slate-800/80 space-y-3">
+                        <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-hand-holding-dollar"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-white">Free Forever</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">No paywalls or subscriptions. Built for developers, digital marketers, bloggers, and SEO pros worldwide.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="contact-view" class="hidden space-y-8">
+            <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-8 sm:p-12 shadow-2xl backdrop-blur-xl">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                    <div class="space-y-6">
+                        <div>
+                            <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-400 px-3 py-1 bg-indigo-500/10 border border-indigo-500/20 rounded-full">Get In Touch</span>
+                            <h1 class="text-3xl font-black text-white mt-3">We’d Love to Hear Your Feedback</h1>
+                        </div>
+
+                        <div class="space-y-4 text-xs text-slate-300">
+                            <div class="flex items-center gap-3 p-4 bg-slate-950/70 rounded-2xl border border-slate-800">
+                                <div class="w-9 h-9 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-sm">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-white">Direct Email Support</p>
+                                    <a href="mailto:livecricschedule@gmail.com" class="text-brand-400 hover:underline font-mono">livecricschedule@gmail.com</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form onsubmit="handleContactSubmit(event)" class="bg-slate-950/80 p-6 rounded-2xl border border-slate-800 space-y-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Your Name</label>
+                            <input type="text" required placeholder="John Doe" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Email Address</label>
+                            <input type="email" required placeholder="john@example.com" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Your Message</label>
+                            <textarea rows="4" required placeholder="How can we help you?" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none custom-scrollbar"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-3 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-xs font-bold transition-all shadow-lg flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div id="privacy-view" class="hidden space-y-8">
+            <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-8 sm:p-12 shadow-2xl backdrop-blur-xl space-y-8">
+                <div class="border-b border-slate-800 pb-6">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-400 px-3 py-1 bg-emerald-500/10 border border-emerald-500/20 rounded-full">Legal Document</span>
+                    <h1 class="text-3xl sm:text-4xl font-black text-white mt-3">Privacy Policy</h1>
+                    <p class="text-xs text-slate-400 mt-1">Last updated: August 2026 • Compliant with Google AdSense, GDPR & CCPA</p>
+                </div>
+
+                <div class="space-y-6 text-xs sm:text-sm text-slate-300 leading-relaxed">
+                    <div class="space-y-2">
+                        <h2 class="text-base font-bold text-emerald-400">1. Introduction & Overview</h2>
+                        <p>At <strong>SEOHubKit</strong>, reachable at <code>seohubkit.com</code>, the privacy of our visitors is one of our main priorities. This Privacy Policy document outlines the types of information that is collected and recorded by SEOHubKit and how we protect your personal data.</p>
+                    </div>
+
+                    <div class="space-y-2">
+                        <h2 class="text-base font-bold text-emerald-400">2. 100% Client-Side Processing & Zero Server Data Retention</h2>
+                        <p>All core functionalities provided on SEOHubKit—including the Meta Tag Generator, Schema Markup Generator, Keyword Density Analyzer, .htaccess Generator, Robots.txt Generator, XML Sitemap Builder, Social Card Previewer, and URL Slug Cleaner—operate completely client-side in your web browser JavaScript environment.</p>
+                        <p>None of the input titles, URLs, text blocks, or configuration parameters you enter into our tools are transmitted to, stored on, or processed by external database servers. Your work remains completely private on your local machine.</p>
+                    </div>
+
+                    <div class="space-y-2">
+                        <h2 class="text-base font-bold text-emerald-400">3. Log Files & Standard Web Analytics</h2>
+                        <p>SEOHubKit follows a standard procedure of using log files. These files log visitors when they visit websites. The information collected by log files includes internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks. These are not linked to any information that is personally identifiable. The purpose of the information is for analyzing trends, administering the site, tracking users' movement on the website, and gathering demographic information.</p>
+                    </div>
+
+                    <div class="space-y-2">
+                        <h2 class="text-base font-bold text-emerald-400">4. Cookies and Web Beacons (Google AdSense Compliance)</h2>
+                        <p>Like any other website, SEOHubKit uses 'cookies'. These cookies are used to store information including visitors' preferences, and the pages on the website that the visitor accessed or visited. The information is used to optimize the users' experience by customizing our web page content based on visitors' browser type and/or other information.</p>
+                        <p>Google is a third-party vendor on our site. It uses cookies, known as DART cookies, to serve ads to our site visitors based upon their visit to <code>seohubkit.com</code> and other sites on the internet. However, visitors may choose to decline the use of DART cookies by visiting the Google ad and content network Privacy Policy at the following URL: <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer" class="text-brand-400 hover:underline">https://policies.google.com/technologies/ads</a>.</p>
+                    </div>
+
+                    <div class="space-y-2">
+                        <h2 class="text-base font-bold text-emerald-400">5. Third-Party Advertising Partners & Ad Networks</h2>
+                        <p>Some of the advertisers on our site may use cookies and web beacons. Our advertising partners include Google AdSense. Third-party ad servers or ad networks use technologies like cookies, JavaScript, or Web Beacons that are used in their respective advertisements and links that appear on SEOHubKit, which are sent directly to users' browsers. They automatically receive your IP address when this occurs. These technologies are used to measure the effectiveness of their advertising campaigns and/or to personalize the advertising content that you see on websites that you visit.</p>
+                        <p>Note that SEOHubKit has no access to or control over these cookies that are used by third-party advertisers.</p>
+                    </div>
+
+                    <div class="space-y-2">
+                        <h2 class="text-base font-bold text-emerald-400">6. Third-Party Privacy Policies (GDPR & CCPA Rights)</h2>
+                        <p>SEOHubKit's Privacy Policy does not apply to other advertisers or websites. Thus, we are advising you to consult the respective Privacy Policies of these third-party ad servers for more detailed information. It may include their practices and instructions about how to opt-out of certain options.</p>
+                        <p>Under the GDPR (General Data Protection Regulation) and CCPA (California Consumer Privacy Act), consumers have rights including:</p>
+                        <ul class="list-disc pl-5 space-y-1 mt-1 text-slate-400">
+                            <li>The right to request that a business disclose the categories and specific pieces of personal data collected.</li>
+                            <li>The right to request that a business delete any personal data about the consumer that a business has collected.</li>
+                            <li>The right to opt-out of the sale of a consumer's personal data.</li>
+                        </ul>
+                        <p class="mt-2">Since SEOHubKit does not collect or sell any personal identifying information, your data remains fully protected.</p>
+                    </div>
+
+                    <div class="space-y-2">
+                        <h2 class="text-base font-bold text-emerald-400">7. Children's Online Privacy Protection Act (COPPA)</h2>
+                        <p>Another part of our priority is adding protection for children while using the internet. We encourage parents and guardians to observe, participate in, and/or monitor and guide their online activity.</p>
+                        <p>SEOHubKit does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.</p>
+                    </div>
+
+                    <div class="space-y-2">
+                        <h2 class="text-base font-bold text-emerald-400">8. Contact Information</h2>
+                        <p>If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us by email at <a href="mailto:livecricschedule@gmail.com" class="text-brand-400 hover:underline font-mono">livecricschedule@gmail.com</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="blog-view" class="hidden space-y-8">
+            <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 sm:p-10 shadow-2xl backdrop-blur-xl space-y-8">
+                <div class="border-b border-slate-800 pb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <div>
+                        <span class="text-xs font-extrabold uppercase tracking-widest text-brand-400 px-3 py-1 bg-brand-500/10 border border-brand-500/20 rounded-full">
+                            <i class="fa-solid fa-newspaper mr-1"></i> SEO Masterclass Guides
+                        </span>
+                        <h1 class="text-3xl sm:text-4xl font-black text-white mt-3">SEOHubKit Deep-Dive Technical Guides</h1>
+                    </div>
+                    <button id="blog-back-btn" onclick="showBlogGrid()" class="hidden self-start md:self-auto px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold transition-all border border-slate-700 flex items-center gap-2">
+                        <i class="fa-solid fa-arrow-left"></i> Back to All Articles
+                    </button>
+                </div>
+
+                <!-- Articles Grid Container -->
+                <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Blog Card 1 -->
+                    <article class="glass-card rounded-2xl p-6 flex flex-col justify-between space-y-4 hover:border-brand-500/40 transition-all cursor-pointer group" onclick="openArticle('meta-tags-guide')">
+                        <div class="space-y-3">
+                            <span class="px-2.5 py-1 bg-brand-500/10 text-brand-400 rounded-lg text-xs font-semibold border border-brand-500/20">Meta Tags & Open Graph</span>
+                            <h2 class="text-base font-extrabold text-white group-hover:text-brand-400 transition-colors">Masterclass on Meta Tags & Social Metadata</h2>
+                            <p class="text-xs text-slate-400 line-clamp-2">Learn how search engine crawlers parse title tags, descriptions, index directives, and social Open Graph banners.</p>
+                        </div>
+                        <span class="text-xs text-brand-400 font-bold flex items-center gap-1">Read Full Guide &rarr;</span>
+                    </article>
+
+                    <!-- Blog Card 2 -->
+                    <article class="glass-card rounded-2xl p-6 flex flex-col justify-between space-y-4 hover:border-rose-500/40 transition-all cursor-pointer group" onclick="openArticle('schema-markup-guide')">
+                        <div class="space-y-3">
+                            <span class="px-2.5 py-1 bg-rose-500/10 text-rose-400 rounded-lg text-xs font-semibold border border-rose-500/20">Structured Data</span>
+                            <h2 class="text-base font-extrabold text-white group-hover:text-rose-400 transition-colors">Schema Markup & JSON-LD Rich Snippets Guide</h2>
+                            <p class="text-xs text-slate-400 line-clamp-2">How to implement structured data markup so Google displays star ratings, FAQs, and article details in search results.</p>
+                        </div>
+                        <span class="text-xs text-rose-400 font-bold flex items-center gap-1">Read Full Guide &rarr;</span>
+                    </article>
+
+                    <!-- Blog Card 3 -->
+                    <article class="glass-card rounded-2xl p-6 flex flex-col justify-between space-y-4 hover:border-teal-500/40 transition-all cursor-pointer group" onclick="openArticle('keyword-density-guide')">
+                        <div class="space-y-3">
+                            <span class="px-2.5 py-1 bg-teal-500/10 text-teal-400 rounded-lg text-xs font-semibold border border-teal-500/20">Content Optimization</span>
+                            <h2 class="text-base font-extrabold text-white group-hover:text-teal-400 transition-colors">Keyword Density & Content Optimization Guide</h2>
+                            <p class="text-xs text-slate-400 line-clamp-2">Avoid over-optimization penalties while structuring keyword ratios for high organic rankings.</p>
+                        </div>
+                        <span class="text-xs text-teal-400 font-bold flex items-center gap-1">Read Full Guide &rarr;</span>
+                    </article>
+
+                    <!-- Blog Card 4 -->
+                    <article class="glass-card rounded-2xl p-6 flex flex-col justify-between space-y-4 hover:border-cyan-500/40 transition-all cursor-pointer group" onclick="openArticle('htaccess-guide')">
+                        <div class="space-y-3">
+                            <span class="px-2.5 py-1 bg-cyan-500/10 text-cyan-400 rounded-lg text-xs font-semibold border border-cyan-500/20">Server Rules</span>
+                            <h2 class="text-base font-extrabold text-white group-hover:text-cyan-400 transition-colors">Apache .htaccess 301 Redirects & Security Guide</h2>
+                            <p class="text-xs text-slate-400 line-clamp-2">How to enforce SSL HTTPS, handle page location migrations, and canonicalize domain URLs using Apache server rules.</p>
+                        </div>
+                        <span class="text-xs text-cyan-400 font-bold flex items-center gap-1">Read Full Guide &rarr;</span>
+                    </article>
+
+                    <!-- Blog Card 5 -->
+                    <article class="glass-card rounded-2xl p-6 flex flex-col justify-between space-y-4 hover:border-indigo-500/40 transition-all cursor-pointer group" onclick="openArticle('robots-txt-guide')">
+                        <div class="space-y-3">
+                            <span class="px-2.5 py-1 bg-indigo-500/10 text-indigo-400 rounded-lg text-xs font-semibold border border-indigo-500/20">Crawl Directives</span>
+                            <h2 class="text-base font-extrabold text-white group-hover:text-indigo-400 transition-colors">Robots.txt Directive Strategy & Crawl Budget Guide</h2>
+                            <p class="text-xs text-slate-400 line-clamp-2">Control search bot crawlers, manage crawl budgets, and prevent indexation of private server paths.</p>
+                        </div>
+                        <span class="text-xs text-indigo-400 font-bold flex items-center gap-1">Read Full Guide &rarr;</span>
+                    </article>
+
+                    <!-- Blog Card 6 -->
+                    <article class="glass-card rounded-2xl p-6 flex flex-col justify-between space-y-4 hover:border-amber-500/40 transition-all cursor-pointer group" onclick="openArticle('xml-sitemap-guide')">
+                        <div class="space-y-3">
+                            <span class="px-2.5 py-1 bg-amber-500/10 text-amber-400 rounded-lg text-xs font-semibold border border-amber-500/20">Indexing Protocol</span>
+                            <h2 class="text-base font-extrabold text-white group-hover:text-amber-400 transition-colors">XML Sitemaps Protocol & Rapid Search Console Indexing</h2>
+                            <p class="text-xs text-slate-400 line-clamp-2">Construct valid Sitemaps protocol files and expedite Google Search Console indexing for new pages.</p>
+                        </div>
+                        <span class="text-xs text-amber-400 font-bold flex items-center gap-1">Read Full Guide &rarr;</span>
+                    </article>
+
+                    <!-- Blog Card 7 -->
+                    <article class="glass-card rounded-2xl p-6 flex flex-col justify-between space-y-4 hover:border-purple-500/40 transition-all cursor-pointer group" onclick="openArticle('url-slug-guide')">
+                        <div class="space-y-3">
+                            <span class="px-2.5 py-1 bg-purple-500/10 text-purple-400 rounded-lg text-xs font-semibold border border-purple-500/20">URL Architecture</span>
+                            <h2 class="text-base font-extrabold text-white group-hover:text-purple-400 transition-colors">Permalink Architecture & Clean URL Slug Design</h2>
+                            <p class="text-xs text-slate-400 line-clamp-2">Design search-friendly, clean permalinks that improve click-through rates and prevent broken links.</p>
+                        </div>
+                        <span class="text-xs text-purple-400 font-bold flex items-center gap-1">Read Full Guide &rarr;</span>
+                    </article>
+
+                </div>
+
+                <!-- Article Full Content Reader View -->
+                <div id="blog-reader" class="hidden space-y-8 bg-slate-950/70 p-6 sm:p-10 rounded-2xl border border-slate-800 text-slate-300 text-xs sm:text-sm leading-relaxed">
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="mt-auto border-t border-slate-800/80 bg-slate-950/95 pt-12 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-10 border-b border-slate-900">
+                <div class="space-y-4 md:col-span-1">
+                    <div class="flex items-center space-x-3">
+                        <div class="h-8 w-8 rounded-lg bg-gradient-to-tr from-brand-600 to-indigo-500 flex items-center justify-center text-slate-950 font-bold">
+                            <i class="fa-solid fa-chart-line text-sm"></i>
+                        </div>
+                        <span class="text-lg font-black text-white tracking-tight">SEOHubKit</span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        An essential, privacy-first webmaster suite built for developers, SEO experts, and bloggers worldwide.
+                    </p>
+                </div>
+
+                <div class="space-y-3">
+                    <h4 class="text-xs font-extrabold uppercase tracking-widest text-white">Popular Tools</h4>
+                    <ul class="space-y-2 text-xs text-slate-400">
+                        <li><button onclick="openTool('meta-generator')" class="hover:text-brand-400">Meta Tag Generator</button></li>
+                        <li><button onclick="openTool('schema-generator')" class="hover:text-brand-400">Schema Markup Generator</button></li>
+                        <li><button onclick="openTool('keyword-density')" class="hover:text-brand-400">Keyword Density Analyzer</button></li>
+                        <li><button onclick="openTool('htaccess-generator')" class="hover:text-brand-400">.htaccess Redirect Generator</button></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-3">
+                    <h4 class="text-xs font-extrabold uppercase tracking-widest text-white">Navigation</h4>
+                    <ul class="space-y-2 text-xs text-slate-400">
+                        <li><button onclick="showHubView()" class="hover:text-brand-400">Home Page</button></li>
+                        <li><button onclick="showAuthView()" class="hover:text-brand-400">Account / Sign Up</button></li>
+                        <li><button onclick="showBlogView()" class="hover:text-brand-400">SEO Blog & Guides</button></li>
+                        <li><button onclick="showAboutView()" class="hover:text-brand-400">About Us</button></li>
+                        <li><button onclick="showContactView()" class="hover:text-brand-400">Contact Us</button></li>
+                        <li><button onclick="showPrivacyView()" class="hover:text-brand-400 text-emerald-400 font-semibold">Privacy Policy</button></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-3 bg-slate-900/60 p-4 rounded-2xl border border-slate-800">
+                    <h4 class="text-xs font-extrabold text-brand-400 flex items-center gap-1.5">
+                        <i class="fa-solid fa-lock"></i> 100% Privacy Guarantee
+                    </h4>
+                    <p class="text-[11px] text-slate-400 leading-relaxed">
+                        Your inputs never leave your web browser. All calculations and logic execute client-side.
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+                <p>© 2026 SEOHubKit. All client-side tools free forever.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 ease-out bg-brand-500 text-slate-950 font-bold px-4 py-3 rounded-xl shadow-2xl flex items-center space-x-2 text-xs">
+        <i class="fa-solid fa-circle-check text-base"></i>
+        <span id="toast-msg">Copied to clipboard!</span>
+    </div>
+
+    <script>
+        // ARTICLES DICTIONARY (Full English Technical Masterclasses + FAQs)
+        const ARTICLES = {
+            'meta-tags-guide': {
+                title: "Masterclass on Meta Tags & Social Metadata",
+                category: "Meta Tags & Open Graph",
+                color: "brand",
+                toolId: "meta-generator",
+                content: `
+                    <div class="space-y-6">
+                        <section class="space-y-3">
+                            <h2 class="text-xl font-bold text-white">1. What It Is & Why It Matters</h2>
+                            <p class="leading-relaxed">Meta tags are snippets of code embedded in the <code>&lt;head&gt;</code> section of an HTML document. They communicate essential metadata to search engine crawlers (Googlebot, Bingbot) and social media platforms (Facebook, Twitter, LinkedIn, WhatsApp). Accurate meta tags directly dictate how your web pages appear in Search Engine Results Pages (SERPs) and social share previews. For deep competitive keyword research, tools like <a href="https://www.semrush.com/" target="_blank" rel="noopener noreferrer" class="text-brand-400 font-semibold hover:underline">Semrush</a> and <a href="https://ahrefs.com/" target="_blank" rel="noopener noreferrer" class="text-brand-400 font-semibold hover:underline">Ahrefs</a> can help identify top meta titles used by industry leaders.</p>
+                        </section>
+
+                        <section class="space-y-3">
+                            <h2 class="text-xl font-bold text-white">2. How It Works Under The Hood</h2>
+                            <p class="leading-relaxed">When a crawler visits your page, it parses the HTML DOM before rendering the visual elements. The title tag sets the primary anchor in SERPs, while the meta description serves as the promotional snippet. Open Graph (og:) tags allow social platforms to fetch specified images, titles, and site names instead of making educated guesses. Learn more on <a href="https://developers.google.com/search/docs/crawling-indexing/special-tags" target="_blank" rel="noopener noreferrer" class="text-brand-400 font-semibold hover:underline">Google Search Central Documentation</a>.</p>
+                        </section>
+
+                        <section class="space-y-3">
+                            <h2 class="text-xl font-bold text-white">3. Troubleshooting Common Issues</h2>
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li><strong>Google Ignoring Meta Description:</strong> If your meta description does not match user search queries, Google may dynamically pull body paragraph text instead. Ensure your description naturally incorporates relevant target terms.</li>
+                                <li><strong>Broken WhatsApp / Facebook Banners:</strong> Always use absolute image URLs (e.g., <code>https://domain.com/banner.jpg</code>) rather than relative paths. Keep file sizes under 2MB.</li>
+                            </ul>
+                        </section>
+
+                        <section class="space-y-3">
+                            <h2 class="text-xl font-bold text-white">4. Frequently Asked Questions (FAQs)</h2>
+                            <div class="space-y-3">
+                                <div class="p-4 bg-slate-900 rounded-xl border border-slate-800">
+                                    <h4 class="font-bold text-white mb-1">Q1: What is the optimal character limit for titles and descriptions?</h4>
+                                    <p class="text-xs text-slate-400">Maintain title tags under 60 characters (~600 pixels) and meta descriptions under 160 characters (~960 pixels) to prevent truncation in search listings.</p>
+                                </div>
+                                <div class="p-4 bg-slate-900 rounded-xl border border-slate-800">
+                                    <h4 class="font-bold text-white mb-1">Q2: Are meta keywords still used by Google?</h4>
+                                    <p class="text-xs text-slate-400">No. Google officially depreciated the meta keywords tag in 2009 due to keyword stuffing spam. However, some secondary search engines still read it.</p>
+                                </div>
+                                <div class="p-4 bg-slate-900 rounded-xl border border-slate-800">
+                                    <h4 class="font-bold text-white mb-1">Q3: What does the <code>noindex, follow</code> directive do?</h4>
+                                    <p class="text-xs text-slate-400">It instructs search engines not to show the current page in search results, but allows them to crawl and follow links on that page.</p>
+                                </div>
+                                <div class="p-4 bg-slate-900 rounded-xl border border-slate-800">
+                                    <h4 class="font-bold text-white mb-1">Q4: Why does my social preview image fail to load?</h4>
+                                    <p class="text-xs text-slate-400">Ensure the image URL is publicly accessible over HTTPS and uses standard image formats like JPG, PNG, or WebP.</p>
+                                </div>
+                                <div class="p-4 bg-slate-900 rounded-xl border border-slate-800">
+                                    <h4 class="font-bold text-white mb-1">Q5: How long does it take for Google to update my meta title change?</h4>
+                                    <p class="text-xs text-slate-400">It depends on your website crawl frequency, typically taking anywhere from a few hours to a couple of weeks.</p>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                `
+            },
+            'schema-markup-guide': {
+                title: "Schema Markup & JSON-LD Rich Snippets Guide",
+                category: "Structured Data",
+                color: "rose",
+                toolId: "schema-generator",
+                content: `
+                    <div class="space-y-6">
+                        <section class="space-y-3">
+                            <h2 class="text-xl font-bold text-white">1. What It Is & Why It Matters</h2>
+                            <p class="leading-relaxed">Schema Markup is a standardized vocabulary created by <a href="https://schema.org/" target="_blank" rel="noopener noreferrer" class="text-rose-400 font-semibold hover:underline">Schema.org</a> (backed by Google, Microsoft, Yahoo, and Yandex). It translates unstructured web content into explicit, structured data machine-readable code. Adding JSON-LD structured data helps Google present rich snippets (star ratings, review cards, article authors, FAQs) directly on SERPs, greatly increasing Click-Through Rates (CTR).</p>
+                        </section>
+
+                        <section class="space-y-3">
+                            <h2 class="text-xl font-bold text-white">2. How It Works Under The Hood</h2>
+                            <p class="leading-relaxed">JSON-LD (JavaScript Object Notation for Linked Data) is injected inside a <code>&lt;script type="application/ld+json"&gt;</code> block. Search crawlers parse this script asynchronously without affecting visual rendering or site performance.</p>
+                        </section>
+
+                        <section class="space-y-3">
+                            <h2 class="text-xl font-bold text-white">3. Troubleshooting Common Issues</h2>
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li><strong>Missing Required Fields:</strong> Google Rich Results test tools will report warnings or errors if required attributes (like headline or author name) are missing.</li>
+                                <li><strong>Schema Spam Penalty:</strong> Never markup invisible text or misleading content. Mismatched visible text and JSON-LD data can lead to structured data manual actions.</li>
+                            </ul>
+                        </section>
+
+                        <section class="space-y-3">
+                            <h2 class="text-xl font-bold text-white">4. Frequently Asked Questions (FAQs)</h2>
+                            <div class="space-y-3">
+                                <div class="p-4 bg-slate-900 rounded-xl border border-slate-800">
+                                    <h4 class="font-bold text-white mb-1">Q1: Why is JSON-LD preferred over Microdata or RDFa?</h4>
+                                    <p class="text-xs text-slate-400">JSON-LD is recommended by Google because it is clean, easy to maintain, and completely separated from HTML elements.</p>
+                                </div>
+                                <div class="p-4 bg-slate-900 rounded-xl border border-slate-800">
+                                    <h4 class="font-bold text-white mb-1">Q2: Does Schema markup directly improve search rankings?</h4>
+                                    <p class="text-xs text-slate-400">While not a direct ranking factor, it dramatically improves visual CTR and helps search engines understand content context.</p>
+                                </div>
+                                <div class="p-4 bg-slate-900 rounded-xl border border-slate-800">
+                                    <h4 class="font-bold text-white mb-1">Q3: How do I test my JSON-LD markup?</h4>
+                                    <p class="text-xs text-slate-400">Use Google's official <a href="https://search.google.com/test/rich-results" target="_blank" rel="noopener noreferrer" class="text-rose-400 font-semibold hover:underline">Rich Results Test Tool</a> or the <a href="https://validator.schema.org/" target="_blank" rel="noopener noreferrer" class="text-rose-400 font-semibold hover:underline">Schema.org Validator</a>.</p>
+                                </div>
+                                <div class="p-4 bg-slate-900 rounded-xl border border-slate-800">
+                                    <h4 class="font-bold text-white mb-1">Q4: Can I add multiple Schema types to a single page?</h4>
+                                    <p class="text-xs text-slate-400">Yes, you can include multiple JSON-LD scripts or nest entities inside a primary graph block.</p>
+                                </div>
+                                <div class="p-4 bg-slate-900 rounded-xl border border-slate-800">
+                                    <h4 class="font-bold text-white mb-1">Q5: How long before rich snippets appear in Google?</h4>
+                                    <p class="text-xs text-slate-400">It depends on re-crawling frequency and Google's algorithmic determination to display rich results.</p>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                `
+            },
+            'keyword-density-guide': {
+                title: "Keyword Density & Content Optimization Guide",
+                category: "Content Optimization",
+                color: "teal",
+                toolId: "keyword-density",
+                content: `
+                    <div class="space-y-6">
+                        <section class="space-y-3">
+                            <h2 class="text-xl font-bold text-white">1. What It Is & Why It Matters</h2>
+                            <p class="leading-relaxed">Keyword density refers to the percentage of times a specific keyword appears within an article relative to the total word count. While early search algorithms relied heavily on exact match counts, modern AI models (BERT, MUM) prioritize contextual relevance. Maintaining a natural keyword density (between 1% to 2.5%) prevents over-optimization and keyword stuffing penalties. You can evaluate your competitors' content strategy using <a href="https://moz.com/" target="_blank" rel="noopener noreferrer" class="text-teal-400 font-semibold hover:underline">Moz</a> or <a href="https://www.semrush.com/analytics/keywordmagic/" target="_blank" rel="noopener noreferrer" class="text-teal-400 font-semibold hover:underline">Semrush Keyword Magic Tool</a>.</p>
+                        </section>
+
+                        <section class="space-y-3">
+                            <h2 class="text-xl font-bold text-white">2. How It Works Under The Hood</h2>
+                            <p class="leading-relaxed">Our client-side analyzer uses JavaScript RegEx string parsing to tokenize raw text into array terms, filtering out single-letter noise and calculating term frequency over total corpus word length.</p>
+                        </section>
+
+                        <section class="space-y-3">
+                            <h2 class="text-xl font-bold text-white">3. Troubleshooting Common Issues</h2>
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li><strong>Unnatural Text Flow:</strong> Forcing keywords repeatedly harms readability and leads to higher bounce rates. Focus on LSI (Latent Semantic Indexing) terms and natural synonyms instead.</li>
+                            </ul>
+                        </section>
+
+                        <section class="space-y-3">
+                            <h2 class="text-xl font-bold text-white">4. Frequently Asked Questions (FAQs)</h2>
+                            <div class="space-y-3">
+                                <div class="p-4 bg-slate-900 rounded-xl border border-slate-800">
+                                    <h4 class="font-bold text-white mb-1">Q1: What is the ideal keyword density percentage?</h4>
+                                    <p class="text-xs text-slate-400">A sweet spot is generally around 1% to 2%. Exceeding 3% can trigger search engine keyword stuffing filters.</p>
+                                </div>
+                                <div class="p-4 bg-slate-900 rounded-xl border border-slate-800">
+                                    <h4 class="font-bold text-white mb-1">Q2: How is reading time calculated?</h4>
+                                    <p class="text-xs text-slate-400">Reading time is calculated using standard average adult reading speed benchmarks of 200 words per minute.</p>
+                                </div>
+                                <div class="p-4 bg-slate-900 rounded-xl border border-slate-800">
+                                    <h4 class="font-bold text-white mb-1">Q3: Do stop words count toward word totals?</h4>
+                                    <p class="text-xs text-slate-400">Yes, overall total word metrics include all words, but keyword frequency tables filter out short connecting terms.</p>
+                                </div>
+                                <div class="p-4 bg-slate-900 rounded-xl border border-slate-800">
+                                    <h4 class="font-bold text-white mb-1">Q4: Are heading tags weighted differently for keyword density?</h4>
+                                    <p class="text-xs text-slate-400">While our basic analyzer measures body text frequency, search engines place higher semantic weight on H1, H2, and H3 headings.</p>
+                                </div>
+                                <div class="p-4 bg-slate-900 rounded-xl border border-slate-800">
+                                    <h4 class="font-bold text-white mb-1">Q5: Can I analyze multi-word keyphrases?</h4>
+                                    <p class="text-xs text-slate-400">Yes, analyzing both single terms and keyphrases ensures balanced content optimization.</p>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                `
+            },
+            'htaccess-guide': {
+                title: "Apache .htaccess 301 Redirects & Server Rules Guide",
+                category: "Server Rules",
+                color: "cyan",
+                toolId: "htaccess-generator",
+                content: `
+                    <div class="space-y-6">
+                        <section class="space-y-3">
+                            <h2 class="text-xl font-bold text-white">1. What It Is & Why It Matters</h2>
+                            <p class="leading-relaxed">The <code>.htaccess</code> file is a directory-level configuration file supported by Apache and Litespeed web servers. It allows webmasters to configure server directives such as 301 permanent redirects, URL rewrites, forcing HTTPS/SSL, and enforcing canonical domain structures without modifying global server configuration files. Read more at the official <a href="https://httpd.apache.org/docs/" target="_blank" rel="noopener noreferrer" class="text-cyan-400 font-semibold hover:underline">Apache HTTP Server Documentation</a>.</p>
+                        </section>
+
+                        <section class="space-y-3">
+                            <h2 class="text-xl font-bold text-white">2. How It Works Under The Hood</h2>
+                            <p class="leading-relaxed">The server's <code>mod_rewrite</code> engine inspects incoming HTTP header requests against specified RewriteCond conditions. When a rule matches, the server executes a 301 permanent redirect header, passing SEO link equity (PageRank) directly to the new URL destination.</p>
+                        </section>
+
+                        <section class="space-y-3">
+                            <h2 class="text-xl font-bold text-white">3. Troubleshooting Common Issues</h2>
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li><strong>500 Internal Server Error:</strong> Caused by syntax typos or unsupported modules. Always back up existing <code>.htaccess</code> files before making edits.</li>
+                                <li><strong>Infinite Redirect Loops:</strong> Occurs when conflicting redirect rules point back and forth. Clear browser cache when testing rule updates.</li>
+                            </ul>
+                        </section>
+
+                        <section class="space-y-3">
+                            <h2 class="text-xl font-bold text-white">4. Frequently Asked Questions (FAQs)</h2>
+                            <div class="space-y-3">
+                                <div class="p-4 bg-slate-900 rounded-xl border border-slate-800">
+                                    <h4 class="font-bold text-white mb-1">Q1: Why should I use 301 redirects instead of 302 redirects?</h4>
+                                    <p class="text-xs text-slate-400">301 redirects signal a permanent change, transferring ~90-99% of SEO link authority to the target URL. 302 redirects are temporary and do not pass ranking equity.</p>
+                                </div>
+                                <div class="p-4 bg-slate-900 rounded-xl border border-slate-800">
+                                    <h4 class="font-bold text-white mb-1">Q2: Where should the .htaccess file be uploaded?</h4>
+                                    <p class="text-xs text-slate-400">Place it in your website's root directory (typically <code>public_html</code> or <code>www</code>).</p>
+                                </div>
+                                <div class="p-4 bg-slate-900 rounded-xl border border-slate-800">
+                                    <h4 class="font-bold text-white mb-1">Q3: How do I force HTTPS on my site?</h4>
+                                    <p class="text-xs text-slate-400">Use our .htaccess generator to turn on RewriteEngine and inject the SSL redirect ruleset.</p>
+                                </div>
+                                <div class="p-4 bg-slate-900 rounded-xl border border-slate-800">
+                                    <h4 class="font-bold text-white mb-1">Q4: Does .htaccess work on Nginx servers?</h4>
+                                    <p class="text-xs text-slate-400">No. Nginx uses its own server block configuration format (nginx.conf).</p>
+                                </div>
+                                <div class="p-4 bg-slate-900 rounded-xl border border-slate-800">
+                                    <h4 class="font-bold text-white mb-1">Q5: Will 301 redirects slow down my website?</h4>
+                                    <p class="text-xs text-slate-400">A few well-structured redirects add negligible latency, but avoid chaining multiple redirects together.</p>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                `
+            },
+            'robots-txt-guide': {
+                title: "Robots.txt Directive Strategy & Crawl Budget Guide",
+                category: "Crawl Directives",
+                color: "indigo",
+                toolId: "robots-generator",
+                content: `
+                    <div class="space-y-6">
+                        <section class="space-y-3">
+                            <h2 class="text-xl font-bold text-white">1. What It Is & Why It Matters</h2>
+                            <p class="leading-relaxed">An XML Sitemap is a structured roadmap listing all important URLs on a website. It helps search engines discover new, deep, or updated content rapidly, ensuring comprehensive indexation across search engine tools like <a href="https://search.google.com/search-console" target="_blank" rel="noopener noreferrer" class="text-amber-400 font-semibold hover:underline">Google Search Console</a> and <a href="https://www.bing.com/webmasters/" target="_blank" rel="noopener noreferrer" class="text-amber-400 font-semibold hover:underline">Bing Webmaster Tools</a>. Full standards can be found on <a href="https://www.sitemaps.org/" target="_blank" rel="noopener noreferrer" class="text-amber-400 font-semibold hover:underline">Sitemaps.org</a>.</p>
+                        </section>
+
+                        <section class="space-y-3">
+                            <h2 class="text-xl font-bold text-white">2. How It Works Under The Hood</h2>
+                            <p class="leading-relaxed">When a search bot hits your domain, it requests <code>/robots.txt</code> before fetching any HTML content. If the file includes <code>Disallow: /admin/</code>, compliance-driven bots respect the rule and skip crawling that path.</p>
+                        </section>
+
+                        <section class="space-y-3">
+                            <h2 class="text-xl font-bold text-white">3. Troubleshooting Common Issues</h2>
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li><strong>Accidentally Blocking the Entire Site:</strong> Using <code>Disallow: /</code> under <code>User-agent: *</code> completely blocks search crawlers and removes your website from search engines! Always verify directives carefully.</li>
+                            </ul>
+                        </section>
+
+                        <section class="space-y-3">
+                            <h2 class="text-xl font-bold text-white">4. Frequently Asked Questions (FAQs)</h2>
+                            <div class="space-y-3">
+                                <div class="p-4 bg-slate-900 rounded-xl border border-slate-800">
+                                    <h4 class="font-bold text-white mb-1">Q1: Does disallowing a page in robots.txt prevent it from showing in search?</h4>
+                                    <p class="text-xs text-slate-400">Not necessarily. If external sites link to a disallowed URL, Google may still index the URL snippet without crawling content. Use meta noindex tags for complete privacy.</p>
+                                </div>
+                                <div class="p-4 bg-slate-900 rounded-xl border border-slate-800">
+                                    <h4 class="font-bold text-white mb-1">Q2: Should I link my XML Sitemap inside robots.txt?</h4>
+                                    <p class="text-xs text-slate-400">Yes! Adding <code>Sitemap: https://domain.com/sitemap.xml</code> helps all compliant crawlers discover your index automatically.</p>
+                                </div>
+                                <div class="p-4 bg-slate-900 rounded-xl border border-slate-800">
+                                    <h4 class="font-bold text-white mb-1">Q3: Is robots.txt case-sensitive?</h4>
+                                    <p class="text-xs text-slate-400">Yes. File paths like <code>/Admin/</code> and <code>/admin/</code> are treated as separate directories by crawlers.</p>
+                                </div>
+                                <div class="p-4 bg-slate-900 rounded-xl border border-slate-800">
+                                    <h4 class="font-bold text-white mb-1">Q4: What is a crawl delay?</h4>
+                                    <p class="text-xs text-slate-400">Crawl delay instructs bots to wait a set number of seconds between requests to reduce server load.</p>
+                                </div>
+                                <div class="p-4 bg-slate-900 rounded-xl border border-slate-800">
+                                    <h4 class="font-bold text-white mb-1">Q5: Where must robots.txt be hosted?</h4>
+                                    <p class="text-xs text-slate-400">It must always be located at the top-level root path (e.g., <code>https://example.com/robots.txt</code>).</p>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                `
+            },
+            'xml-sitemap-guide': {
+                title: "XML Sitemaps Protocol & Search Engine Indexing",
+                category: "Indexing Protocol",
+                color: "amber",
+                toolId: "sitemap-generator",
+                content: `
+                    <div class="space-y-6">
+                        <section class="space-y-3">
+                            <h2 class="text-xl font-bold text-white">1. What It Is & Why It Matters</h2>
+                            <p class="leading-relaxed">An XML Sitemap is a structured roadmap listing all important URLs on a website. It helps search engines discover new, deep, or updated content rapidly, ensuring comprehensive indexation across search engines like Google Search Console and Bing Webmaster Tools.</p>
+                        </section>
+
+                        <section class="space-y-3">
+                            <h2 class="text-xl font-bold text-white">2. How It Works Under The Hood</h2>
+                            <p class="leading-relaxed">XML sitemaps adhere to the official Sitemaps.org XML schema protocol using tags like <code>&lt;urlset&gt;</code>, <code>&lt;url&gt;</code>, and <code>&lt;loc&gt;</code> to cleanly feed URL lists directly to search console indexes.</p>
+                        </section>
+
+                        <section class="space-y-3">
+                            <h2 class="text-xl font-bold text-white">3. Troubleshooting Common Issues</h2>
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li><strong>Including Non-200 URLs:</strong> Never include 404 broken pages, 301 redirects, or <code>noindex</code> pages in your primary XML sitemap. Ensure every URL returns a clean 200 OK HTTP status code.</li>
+                            </ul>
+                        </section>
+
+                        <section class="space-y-3">
+                            <h2 class="text-xl font-bold text-white">4. Frequently Asked Questions (FAQs)</h2>
+                            <div class="space-y-3">
+                                <div class="p-4 bg-slate-900 rounded-xl border border-slate-800">
+                                    <h4 class="font-bold text-white mb-1">Q1: How many URLs can a single XML sitemap contain?</h4>
+                                    <p class="text-xs text-slate-400">A single XML sitemap can hold up to 50,000 URLs and must not exceed 50MB uncompressed file size.</p>
+                                </div>
+                                <div class="p-4 bg-slate-900 rounded-xl border border-slate-800">
+                                    <h4 class="font-bold text-white mb-1">Q2: How do I submit my sitemap to Google?</h4>
+                                    <p class="text-xs text-slate-400">Log into Google Search Console, navigate to the Sitemaps tab, enter your sitemap filename (e.g., <code>sitemap.xml</code>), and click Submit.</p>
+                                </div>
+                                <div class="p-4 bg-slate-900 rounded-xl border border-slate-800">
+                                    <h4 class="font-bold text-white mb-1">Q3: Do I need a sitemap index file?</h4>
+                                    <p class="text-xs text-slate-400">If your website exceeds 50,000 URLs, create a parent Sitemap Index file that links to multiple sub-sitemaps.</p>
+                                </div>
+                                <div class="p-4 bg-slate-900 rounded-xl border border-slate-800">
+                                    <h4 class="font-bold text-white mb-1">Q4: Are XML sitemaps visible to web users?</h4>
+                                    <p class="text-xs text-slate-400">While accessible via URL, they are formatted for machine parsing rather than human readers.</p>
+                                </div>
+                                <div class="p-4 bg-slate-900 rounded-xl border border-slate-800">
+                                    <h4 class="font-bold text-white mb-1">Q5: Should I include images in my XML sitemap?</h4>
+                                    <p class="text-xs text-slate-400">Yes, adding image tags inside sitemap URLs helps boost Google Image Search indexation.</p>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                `
+            },
+            'url-slug-guide': {
+                title: "Permalink Architecture & Clean URL Slug Design",
+                category: "URL Architecture",
+                color: "purple",
+                toolId: "slug-cleaner",
+                content: `
+                    <div class="space-y-6">
+                        <section class="space-y-3">
+                            <h2 class="text-xl font-bold text-white">1. What It Is & Why It Matters</h2>
+                            <p class="leading-relaxed">A URL slug is the user-friendly portion of a web address that comes after the domain name (e.g., <code>domain.com/clean-url-slug</code>). Clean, readable URLs improve user trust, user experience, and search engine relevance by clearly indicating page topic content.</p>
+                        </section>
+
+                        <section class="space-y-3">
+                            <h2 class="text-xl font-bold text-white">2. How It Works Under The Hood</h2>
+                            <p class="leading-relaxed">Our URL cleaner strips out non-alphanumeric punctuation marks, converts uppercase characters to lowercase, and replaces spaces with clean single hyphens using JavaScript RegEx algorithms.</p>
+                        </section>
+
+                        <section class="space-y-3">
+                            <h2 class="text-xl font-bold text-white">3. Troubleshooting Common Issues</h2>
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li><strong>Changing Live Published Slugs:</strong> Changing existing URL slugs breaks old incoming links and creates 404 errors! Always set up a 301 redirect if you must modify a live URL slug.</li>
+                            </ul>
+                        </section>
+
+                        <section class="space-y-3">
+                            <h2 class="text-xl font-bold text-white">4. Frequently Asked Questions (FAQs)</h2>
+                            <div class="space-y-3">
+                                <div class="p-4 bg-slate-900 rounded-xl border border-slate-800">
+                                    <h4 class="font-bold text-white mb-1">Q1: Should I use underscores or hyphens in URL slugs?</h4>
+                                    <p class="text-xs text-slate-400">Google explicitly recommends hyphens (-) over underscores (_), as hyphens treat words as distinct separated terms.</p>
+                                </div>
+                                <div class="p-4 bg-slate-900 rounded-xl border border-slate-800">
+                                    <h4 class="font-bold text-white mb-1">Q2: Should stop words be removed from slugs?</h4>
+                                    <p class="text-xs text-slate-400">Yes. Removing filler words (like "and", "the", "of") keeps URLs short and keyword focused.</p>
+                                </div>
+                                <div class="p-4 bg-slate-900 rounded-xl border border-slate-800">
+                                    <h4 class="font-bold text-white mb-1">Q3: What is the optimal length for a URL slug?</h4>
+                                    <p class="text-xs text-slate-400">Aim for 3 to 5 concise words that reflect your primary target keyword phrase.</p>
+                                </div>
+                                <div class="p-4 bg-slate-900 rounded-xl border border-slate-800">
+                                    <h4 class="font-bold text-white mb-1">Q4: Are URL slugs case-sensitive?</h4>
+                                    <p class="text-xs text-slate-400">Most web servers treat lowercase and uppercase URLs as separate resources, which can lead to duplicate content issues if mixed. Always stick to lowercase URLs.</p>
+                                </div>
+                                <div class="p-4 bg-slate-900 rounded-xl border border-slate-800">
+                                    <h4 class="font-bold text-white mb-1">Q5: Can special characters be used in URL slugs?</h4>
+                                    <p class="text-xs text-slate-400">No. Non-ASCII characters should be stripped or sanitized to prevent broken link errors.</p>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                `
+            }
+        };
+
+        // NAVIGATION & MOBILE MENU FUNCTIONS
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('mobile-menu-icon');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                menu.classList.add('hidden');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        }
+
+        function closeMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('mobile-menu-icon');
+            if (menu) menu.classList.add('hidden');
+            if (icon) {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        }
+
+        function hideAllViews() {
+            document.getElementById('auth-view').classList.add('hidden');
+            document.getElementById('hub-view').classList.add('hidden');
+            document.getElementById('workspace-view').classList.add('hidden');
+            document.getElementById('about-view').classList.add('hidden');
+            document.getElementById('contact-view').classList.add('hidden');
+            document.getElementById('privacy-view').classList.add('hidden');
+            document.getElementById('blog-view').classList.add('hidden');
+        }
+
+        function showAuthView() {
+            hideAllViews();
+            document.getElementById('auth-view').classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function showHubView() {
+            const session = JSON.parse(localStorage.getItem('seohubkit_session') || 'null');
+            if (!session) {
+                showToast('Please Sign In or Create a Free Account to access SEO Tools!');
+                showAuthView();
+                return;
+            }
+            hideAllViews();
+            document.getElementById('hub-view').classList.remove('hidden');
+            document.getElementById('nav-hub-btn').classList.add('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function showBlogView() {
+            hideAllViews();
+            document.getElementById('blog-view').classList.remove('hidden');
+            showBlogGrid();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function showBlogGrid() {
+            document.getElementById('blog-grid').classList.remove('hidden');
+            document.getElementById('blog-reader').classList.add('hidden');
+            document.getElementById('blog-back-btn').classList.add('hidden');
+        }
+
+        function openArticle(articleKey) {
+            const article = ARTICLES[articleKey];
+            if (!article) return;
+
+            const grid = document.getElementById('blog-grid');
+            const reader = document.getElementById('blog-reader');
+            const backBtn = document.getElementById('blog-back-btn');
+
+            grid.classList.add('hidden');
+            reader.classList.remove('hidden');
+            backBtn.classList.remove('hidden');
+
+            reader.innerHTML = `
+                <div class="border-b border-slate-800 pb-6 mb-6">
+                    <div class="flex items-center justify-between gap-4 mb-3">
+                        <span class="px-3 py-1 bg-${article.color}-500/10 text-${article.color}-400 rounded-full text-xs font-bold border border-${article.color}-500/30">
+                            ${article.category}
+                        </span>
+                        <button onclick="openTool('${article.toolId}')" class="px-3 py-1.5 rounded-xl bg-brand-500 text-slate-950 text-xs font-extrabold hover:bg-brand-400 transition-all flex items-center gap-1.5 shadow-lg shadow-brand-500/20">
+                            Launch Related Tool <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                    <h1 class="text-2xl sm:text-3xl font-black text-white">${article.title}</h1>
+                </div>
+                ${article.content}
+            `;
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function showAboutView() { hideAllViews(); document.getElementById('about-view').classList.remove('hidden'); }
+        function showContactView() { hideAllViews(); document.getElementById('contact-view').classList.remove('hidden'); }
+        function showPrivacyView() { hideAllViews(); document.getElementById('privacy-view').classList.remove('hidden'); }
+
+        function openTool(toolId) {
+            const session = JSON.parse(localStorage.getItem('seohubkit_session') || 'null');
+            if (!session) {
+                showToast('Please Sign In or Create a Free Account to use this tool!');
+                showAuthView();
+                return;
+            }
+            hideAllViews();
+            document.getElementById('workspace-view').classList.remove('hidden');
+            document.getElementById('nav-hub-btn').classList.remove('hidden');
+            switchToolWorkspace(toolId);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function switchToolWorkspace(toolId) {
+            document.querySelectorAll('.tool-workspace-btn').forEach(btn => {
+                if (btn.getAttribute('data-tool-tab') === toolId) {
+                    btn.classList.add('bg-brand-500/10', 'text-brand-400', 'border', 'border-brand-500/30', 'font-bold');
+                    btn.classList.remove('text-slate-400', 'hover:bg-slate-800');
+                } else {
+                    btn.classList.remove('bg-brand-500/10', 'text-brand-400', 'border', 'border-brand-500/30', 'font-bold');
+                    btn.classList.add('text-slate-400', 'hover:bg-slate-800');
+                }
+            });
+
+            document.querySelectorAll('.tool-workspace-panel').forEach(panel => panel.classList.add('hidden'));
+            const activePanel = document.getElementById(toolId);
+            if (activePanel) activePanel.classList.remove('hidden');
+        }
+
+        function filterToolsGrid() {
+            const query = document.getElementById('tool-search').value.toLowerCase().trim();
+            const cards = document.querySelectorAll('.tool-card');
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const keywords = card.getAttribute('data-keywords') || '';
+                const text = card.innerText.toLowerCase();
+                if (text.includes(query) || keywords.includes(query)) {
+                    card.classList.remove('hidden');
+                    visibleCount++;
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+
+            document.getElementById('tools-count').textContent = `${visibleCount} Tools Available`;
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-msg').textContent = message;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 2500);
+        }
+
+        function copyToClipboard(elementId) {
+            const el = document.getElementById(elementId);
+            let text = el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' ? el.value : el.innerText;
+            if (!text || text.includes("Click 'Generate")) { showToast('Please generate code first!'); return; }
+
+            const temp = document.createElement('textarea');
+            temp.value = text;
+            document.body.appendChild(temp);
+            temp.select();
+            document.execCommand('copy');
+            document.body.removeChild(temp);
+            showToast('Copied to clipboard!');
+        }
+
+        function downloadFile(elementId, filename, mimeType) {
+            const el = document.getElementById(elementId);
+            const content = el.innerText || el.textContent;
+            if (!content || content.includes("Click 'Generate")) { showToast('Please generate code first!'); return; }
+
+            const blob = new Blob([content], { type: mimeType });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            showToast(`Downloaded ${filename}!`);
+        }
+
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            showToast('Message sent successfully!');
+            e.target.reset();
+        }
+
+        function updateCharCounts() {
+            const title = document.getElementById('meta-title').value.trim();
+            const desc = document.getElementById('meta-desc').value.trim();
+            document.getElementById('title-char-count').textContent = `${title.length} / 60 chars`;
+            document.getElementById('desc-char-count').textContent = `${desc.length} / 160 chars`;
+        }
+
+        function generateMetaTags() {
+            const title = document.getElementById('meta-title').value.trim();
+            const desc = document.getElementById('meta-desc').value.trim();
+            const keywords = document.getElementById('meta-keywords').value.trim();
+            const author = document.getElementById('meta-author').value.trim();
+            const indexDir = document.getElementById('meta-robots-index').value;
+            const followDir = document.getElementById('meta-robots-follow').value;
+            const ogSiteName = document.getElementById('meta-og-sitename').value.trim();
+            const ogImage = document.getElementById('meta-og-image').value.trim();
+
+            let code = `<!-- Primary Search Meta Tags -->\n`;
+            if (title) code += `<title>${title}</title>\n<meta name="title" content="${title}">\n`;
+            if (desc) code += `<meta name="description" content="${desc}">\n`;
+            if (keywords) code += `<meta name="keywords" content="${keywords}">\n`;
+            if (author) code += `<meta name="author" content="${author}">\n`;
+            code += `<meta name="robots" content="${indexDir}, ${followDir}">\n`;
+            code += `<meta name="viewport" content="width=device-width, initial-scale=1.0">\n\n`;
+
+            if (ogSiteName || ogImage || title || desc) {
+                code += `<!-- Open Graph / Social Media Tags -->\n`;
+                code += `<meta property="og:type" content="website">\n`;
+                if (title) code += `<meta property="og:title" content="${title}">\n`;
+                if (desc) code += `<meta property="og:description" content="${desc}">\n`;
+                if (ogSiteName) code += `<meta property="og:site_name" content="${ogSiteName}">\n`;
+                if (ogImage) code += `<meta property="og:image" content="${ogImage}">\n`;
+            }
+
+            document.getElementById('meta-output').textContent = code;
+            showToast('Meta tags generated!');
+        }
+
+        function fillSampleMeta() {
+            document.getElementById('meta-title').value = "SEOHubKit - Free Webmaster Tools";
+            document.getElementById('meta-desc').value = "Free client-side SEO and webmaster suite.";
+            document.getElementById('meta-keywords').value = "seo, meta generator, webmaster tools";
+            document.getElementById('meta-author').value = "SEOHubKit Team";
+            document.getElementById('meta-og-sitename').value = "SEOHubKit";
+            document.getElementById('meta-og-image').value = "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80";
+            updateCharCounts();
+            showToast('Sample meta data filled!');
+        }
+
+        function generateSchemaMarkup() {
+            const type = document.getElementById('schema-type').value;
+            const headline = document.getElementById('schema-art-headline').value || 'Sample Article Title';
+            const image = document.getElementById('schema-art-image').value || 'https://example.com/image.jpg';
+            const author = document.getElementById('schema-art-author').value || 'John Doe';
+            const publisher = document.getElementById('schema-art-publisher').value || 'SEOHubKit';
+
+            const schemaData = {
+                "@context": "https://schema.org",
+                "@type": type,
+                "headline": headline,
+                "image": [image],
+                "author": {
+                    "@type": "Person",
+                    "name": author
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": publisher
+                }
+            };
+
+            const jsonString = `<script type="application/ld+json">\n${JSON.stringify(schemaData, null, 2)}\n<\/script>`;
+            document.getElementById('schema-output').textContent = jsonString;
+            showToast('JSON-LD Schema Generated!');
+        }
+
+        function fillSampleSchema() {
+            document.getElementById('schema-art-headline').value = "How to Master Technical SEO in 2026";
+            document.getElementById('schema-art-image').value = "https://images.unsplash.com/photo-1460925895917-afdab827c52f";
+            document.getElementById('schema-art-author').value = "Jane Developer";
+            document.getElementById('schema-art-publisher').value = "SEOHubKit Publishing";
+            showToast('Sample Schema loaded!');
+        }
+
+        function analyzeKeywordDensity() {
+            const text = document.getElementById('density-text-input').value.trim();
+            if (!text) {
+                showToast('Please paste some text first!');
+                return;
+            }
+
+            const words = text.toLowerCase().match(/\b[a-z0-9]+\b/g) || [];
+            const totalWords = words.length;
+            const charCount = text.length;
+            const readingTime = Math.ceil(totalWords / 200);
+
+            const freqMap = {};
+            words.forEach(w => {
+                if (w.length > 2) freqMap[w] = (freqMap[w] || 0) + 1;
+            });
+
+            const uniqueWords = Object.keys(freqMap).length;
+            const sorted = Object.entries(freqMap).sort((a, b) => b[1] - a[1]).slice(0, 8);
+
+            document.getElementById('stat-words').textContent = totalWords;
+            document.getElementById('stat-chars').textContent = charCount;
+            document.getElementById('stat-unique').textContent = uniqueWords;
+            document.getElementById('stat-reading').textContent = `${readingTime} min`;
+
+            const tbody = document.getElementById('density-table-body');
+            tbody.innerHTML = '';
+
+            sorted.forEach(([word, count]) => {
+                const pct = ((count / totalWords) * 100).toFixed(1);
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td class="p-3 font-semibold text-teal-400">${word}</td>
+                    <td class="p-3">${count}</td>
+                    <td class="p-3">${pct}%</td>
+                `;
+                tbody.appendChild(tr);
+            });
+
+            document.getElementById('density-results').classList.remove('hidden');
+            showToast('Text analysis complete!');
+        }
+
+        function generateHtaccess() {
+            const oldPath = document.getElementById('ht-old-path').value.trim();
+            const newPath = document.getElementById('ht-new-path').value.trim();
+            const forceHttps = document.getElementById('ht-force-https').checked;
+            const forceWww = document.getElementById('ht-force-www').checked;
+
+            let code = `# .htaccess Rules Generated by SEOHubKit\nRewriteEngine On\n\n`;
+
+            if (forceHttps) {
+                code += `# Force HTTPS Rule\nRewriteCond %{HTTPS} off\nRewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]\n\n`;
+            }
+
+            if (forceWww) {
+                code += `# Force WWW Prefix Rule\nRewriteCond %{HTTP_HOST} !^www\.\nRewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]\n\n`;
+            }
+
+            if (oldPath && newPath) {
+                code += `# 301 Permanent Redirect\nRedirect 301 ${oldPath} ${newPath}\n`;
+            }
+
+            document.getElementById('htaccess-output').textContent = code;
+            showToast('.htaccess rules generated!');
+        }
+
+        function generateRobotsTxt() {
+            const access = document.getElementById('robots-default-access').value;
+            const delay = document.getElementById('robots-crawl-delay').value;
+            const sitemap = document.getElementById('robots-sitemap-url').value.trim();
+
+            let code = `# Robots.txt Generated by SEOHubKit\nUser-agent: *\n`;
+
+            if (access === 'allow') {
+                code += `Allow: /\n`;
+            } else {
+                code += `Disallow: /\n`;
+            }
+
+            if (delay) {
+                code += `Crawl-delay: ${delay}\n`;
+            }
+
+            const disAdmin = document.getElementById('dis-admin').checked;
+            const disCgi = document.getElementById('dis-cgi').checked;
+            const disTmp = document.getElementById('dis-tmp').checked;
+
+            if (disAdmin) code += `Disallow: /admin/\n`;
+            if (disCgi) code += `Disallow: /cgi-bin/\n`;
+            if (disTmp) code += `Disallow: /tmp/\n`;
+
+            if (sitemap) {
+                code += `\nSitemap: ${sitemap}\n`;
+            }
+
+            document.getElementById('robots-output').textContent = code;
+            showToast('Robots.txt generated!');
+        }
+
+        function fillSampleRobots() {
+            document.getElementById('robots-sitemap-url').value = "https://seohubkit.com/sitemap.xml";
+            document.getElementById('dis-cgi').checked = true;
+            document.getElementById('dis-tmp').checked = true;
+            showToast('Sample robots data filled!');
+        }
+
+        function generateSitemap() {
+            const rawUrls = document.getElementById('sitemap-urls').value.trim().split('\n');
+            const urls = rawUrls.map(u => u.trim()).filter(u => u.length > 0);
+
+            if (urls.length === 0) {
+                showToast('Please enter at least one URL!');
+                return;
+            }
+
+            let xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
+            
+            urls.forEach(u => {
+                xml += `  <url>\n    <loc>${u}</loc>\n    <priority>0.80</priority>\n  </url>\n`;
+            });
+
+            xml += `</urlset>`;
+            document.getElementById('sitemap-output').textContent = xml;
+            showToast('XML Sitemap generated!');
+        }
+
+        function fillSampleSitemap() {
+            document.getElementById('sitemap-urls').value = "https://seohubkit.com/\nhttps://seohubkit.com/about\nhttps://seohubkit.com/blog";
+            showToast('Sample sitemap URLs filled!');
+        }
+
+        function updateSocialPreviews() {
+            const title = document.getElementById('prev-title').value;
+            const desc = document.getElementById('prev-desc').value;
+            const domain = document.getElementById('prev-domain').value;
+            const img = document.getElementById('prev-image').value;
+
+            document.getElementById('card-fb-title').textContent = title;
+            document.getElementById('card-fb-desc').textContent = desc;
+            document.getElementById('card-fb-domain').textContent = domain.toUpperCase();
+            document.getElementById('card-fb-img').src = img;
+
+            document.getElementById('card-tw-title').textContent = title;
+            document.getElementById('card-tw-desc').textContent = desc;
+            document.getElementById('card-tw-domain').textContent = domain.toLowerCase();
+            document.getElementById('card-tw-img').src = img;
+
+            showToast('Social previews updated!');
+        }
+
+        function cleanSlug() {
+            const input = document.getElementById('slug-input').value.trim();
+            if (!input) { showToast('Type a title first!'); return; }
+            const slug = input.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-');
+            document.getElementById('slug-output').value = slug;
+            showToast('Clean slug generated!');
+        }
+
+        function switchAuthTab(tab) {
+            const signinBtn = document.getElementById('tab-btn-signin');
+            const signupBtn = document.getElementById('tab-btn-signup');
+            const signinForm = document.getElementById('form-signin');
+            const signupForm = document.getElementById('form-signup');
+
+            if (tab === 'signin') {
+                signinBtn.className = "flex-1 py-2.5 text-center text-xs font-extrabold rounded-xl bg-brand-500/10 text-brand-400 border border-brand-500/30 transition-all";
+                signupBtn.className = "flex-1 py-2.5 text-center text-xs font-extrabold rounded-xl text-slate-400 hover:text-white hover:bg-slate-900 transition-all";
+                signinForm.classList.remove('hidden');
+                signupForm.classList.add('hidden');
+            } else {
+                signupBtn.className = "flex-1 py-2.5 text-center text-xs font-extrabold rounded-xl bg-brand-500/10 text-brand-400 border border-brand-500/30 transition-all";
+                signinBtn.className = "flex-1 py-2.5 text-center text-xs font-extrabold rounded-xl text-slate-400 hover:text-white hover:bg-slate-900 transition-all";
+                signupForm.classList.remove('hidden');
+                signinForm.classList.add('hidden');
+            }
+        }
+
+        function handleSignUp(e) {
+            e.preventDefault();
+            const name = document.getElementById('signup-name').value.trim();
+            const email = document.getElementById('signup-email').value.trim().toLowerCase();
+            const password = document.getElementById('signup-password').value;
+
+            const users = JSON.parse(localStorage.getItem('seohubkit_users') || '{}');
+            if (users[email]) {
+                showToast('Account exists! Switching to Sign In.');
+                switchAuthTab('signin');
+                return;
+            }
+
+            users[email] = { name, email, password };
+            localStorage.setItem('seohubkit_users', JSON.stringify(users));
+
+            // Set logged in session
+            localStorage.setItem('seohubkit_session', JSON.stringify({ name, email }));
+            updateAuthUI();
+            showToast(`Welcome, ${name}! Account created.`);
+            showHubView(); // Automatically jump into SEOHubKit tools page
+        }
+
+        function handleSignIn(e) {
+            e.preventDefault();
+            const email = document.getElementById('signin-email').value.trim().toLowerCase();
+            const password = document.getElementById('signin-password').value;
+
+            const users = JSON.parse(localStorage.getItem('seohubkit_users') || '{}');
+            const user = users[email];
+
+            if (!user || user.password !== password) {
+                showToast('Invalid email or password!');
+                return;
+            }
+
+            localStorage.setItem('seohubkit_session', JSON.stringify({ name: user.name, email: user.email }));
+            updateAuthUI();
+            showToast(`Welcome back, ${user.name}!`);
+            showHubView(); // Automatically jump into SEOHubKit tools page
+        }
+
+        function handleSignOut() {
+            localStorage.removeItem('seohubkit_session');
+            updateAuthUI();
+            showToast('Signed out successfully.');
+            showAuthView();
+        }
+
+        function updateAuthUI() {
+            const session = JSON.parse(localStorage.getItem('seohubkit_session') || 'null');
+            const container = document.getElementById('auth-nav-container');
+            const mobileContainer = document.getElementById('auth-nav-container-mobile');
+
+            const content = session ? `
+                <div class="flex items-center space-x-2 whitespace-nowrap">
+                    <span class="text-xs font-semibold text-brand-400 bg-brand-500/10 px-2.5 py-1 rounded-xl border border-brand-500/20">
+                        <i class="fa-solid fa-user-check mr-1"></i> ${session.name}
+                    </span>
+                    <button onclick="handleSignOut()" class="px-2.5 py-1 rounded-xl text-xs font-semibold text-slate-400 hover:text-rose-400 hover:bg-slate-900 border border-slate-800 transition-all">
+                        Sign Out
+                    </button>
+                </div>
+            ` : '';
+
+            if (container) container.innerHTML = content;
+            if (mobileContainer) mobileContainer.innerHTML = content;
+        }
+
+        window.onload = function() {
+            updateCharCounts();
+            updateSocialPreviews();
+            updateAuthUI();
+            
+            // Check session: if user is signed in, show tools hub directly, else show account landing page
+            const session = JSON.parse(localStorage.getItem('seohubkit_session') || 'null');
+            if (session) {
+                showHubView();
+            } else {
+                showAuthView();
+            }
+        };
+    </script>
+</body>
+</html>
